@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_http_code_502">Ответ сервера не удался,повторите попытку позже.</string>
+    <string name="error_new_password_atlast_three_char">8–32-разрядные символы, содержащие по крайней мере цифры, заглавные буквы, строчные буквы, специальные символы из 3</string>
+    <string name="error_new_password_cannot_equel_old_password">Два раза ввод пароля не согласован</string>
+    <string name="error_opening_the_camera">Ошибка открытия камеры</string>
+    <string name="error_server">Ошибка сервера неизвестна</string>
+    <string name="exception_connect">Не удалось подключиться к сети,повторите попытку позже</string>
+    <string name="exception_connection_was_rest">Соединение было сброшено, повторите попытку позже</string>
+    <string name="exception_default">Ошибка, повторите попытку позже</string>
+    <string name="exception_json">Ошибка анализа данных </string>
+    <string name="exception_protocol_error">Ошибка сетевого протокола, повторите попытку</string>
+    <string name="exception_security">Недостаточные системные права</string>
+    <string name="exception_socket_time_out">Сетевое соединение отключено, повторите попытку позже</string>
+    <string name="exception_ssl">Ошибка проверки сетевого сертификата</string>
+    <string name="exception_timeout">Время ожидания запроса истекло, повторите попытку</string>
+    <string name="exception_unknown_host">В настоящее время нет сети, проверьте настройки сети</string>
+    <string name="message_environment_too_dark_no_flash">Окружающая среда слишком темная, пожалуйста, включите вспышку</string>
+    <string name="action_manual_authorization">Перейти к ручной авторизации</string>
+    <string name="permission_request_rejected_scanner">Для сканирования QR-кода требуется доступ к камере, пожалуйста, перейдите в информация о приложении -> разрешения, чтобы предоставить!</string>
+    <string name="permission_request_access_album_image">Для доступа к фотоальбомам требуется доступ к внешнему хранилищу“, пожалуйста, перейдите в информация о приложении -> разрешение, чтобы предоставить!</string>
+</resources>

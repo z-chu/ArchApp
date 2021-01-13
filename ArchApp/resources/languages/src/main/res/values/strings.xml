@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name" translatable="false">Saltoken</string>
+    <string name="abc_app_name" translatable="false">Saltoken</string>
+    <string name="title_home" translatable="false">Home</string>
+    <string name="title_dashboard" translatable="false">Dashboard</string>
+    <string name="title_notifications" translatable="false">Notifications</string>
+
+    <string name="error_http_code_502">The server response failed. Please try again later.</string>
+    <string name="error_new_password_atlast_three_char">Password length should be between 8 and 20 characters; must contain at least three of the following: (i) lowercase letters, (ii) uppercase letters, (iii) numeric digit, or (iv) special characters.</string>
+    <string name="error_new_password_cannot_equel_old_password">Passwords do not match</string>
+    <string name="error_opening_the_camera">Error opening the camera</string>
+    <string name="error_server">Server unknown error</string>
+
+    <string name="exception_connect">Network connection failed, please try again later</string>
+    <string name="exception_connection_was_rest">The connection was reset, please try again later</string>
+    <string name="exception_default">Something went wrong, please try again later</string>
+    <string name="exception_json">Data parsing error</string>
+    <string name="exception_protocol_error">Network protocol error, please try again</string>
+    <string name="exception_security">Insufficient permissions</string>
+    <string name="exception_socket_time_out">Network connection timed out, please try again later</string>
+    <string name="exception_ssl">Network certificate verification failed</string>
+    <string name="exception_timeout">Request timed out, please try again</string>
+    <string name="exception_unknown_host">No network, please check the network settings</string>
+    <string name="message_environment_too_dark_no_flash">The environment is too dark, please turn on the flash</string>
+    <string name="action_manual_authorization">Settings</string>
+    <string name="permission_request_rejected_scanner">To scan the QR code you need to access the “Camera”, please go to “Application Information -> Permissions”!</string>
+    <string name="permission_request_access_album_image">Access to the album requires access to External Storage, please go to Application Information -> Permissions!</string>
+
+    <string name="action_try_again">Try again</string>
+
+</resources>

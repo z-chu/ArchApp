@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_http_code_502">Le serveur ne répond pas, veuillez réessayer plus tard.</string>
+    <string name="error_new_password_atlast_three_char">Caractères de 8 à 32 bits, dont au moins trois des types suivants: chiffres, lettres majuscules, lettres minuscules et symboles spéciaux</string>
+    <string name="error_new_password_cannot_equel_old_password">Les deux mots de passe que vous avez entré ne correspondent pas</string>
+    <string name="error_opening_the_camera">Erreur lors de l\'ouverture de la caméra</string>
+    <string name="error_server">Erreur inconnue de serveur</string>
+    <string name="exception_connect">La connexion de réseau a échoué, veuillez réessayer plus tard</string>
+    <string name="exception_connection_was_rest">La connexion a été réinitialisé, veuillez réessayer plus tard.</string>
+    <string name="exception_default">Une erreur s\'est produite, veuillez réessayer.</string>
+    <string name="exception_json">Erreur d\'analyse des données</string>
+    <string name="exception_protocol_error">Erreur de protocole du réseau, veuillez réessayer.</string>
+    <string name="exception_security">Autorisations de système insuffisantes</string>
+    <string name="exception_socket_time_out">Expiration du délai de connexion de réseau, veuillez réessayer plus tard</string>
+    <string name="exception_ssl">La vérification du certificat de réseau a échoué</string>
+    <string name="exception_timeout">Le délai a expiré, veuillez réessayer plus tard.</string>
+    <string name="exception_unknown_host">Pas de réseau, veuillez vérifier les paramètres de réseau.</string>
+    <string name="message_environment_too_dark_no_flash">L\'environnement est trop sombre, veuillez allumer le flash</string>
+    <string name="action_manual_authorization">Autorisation manuelle</string>
+    <string name="permission_request_rejected_scanner">Pour scanner le QR code, vous devez aller dans Caméra et Informations sur l\'application -> Autorisations.</string>
+    <string name="permission_request_access_album_image">Ouvrir l\'album nécessite l\'accès au Stockage externe. Accéder à Informations sur l\'application -> Autorisations!</string>
+</resources>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/md_green_500</color>
+    <color name="colorPrimaryVariant">@color/md_green_700</color>
+    <color name="colorSecondary">@color/md_green_A400</color>
+    <color name="colorSecondaryVariant">@color/md_green_A400</color>
+    <color name="colorOnPrimary">@color/white</color>
+    <color name="colorOnSecondary">@color/white</color>
+
+    <color name="colorSurface">@color/white</color>
+    <color name="colorOnSurface">@color/textColorPrimary</color>
+    <color name="colorBackground">@color/md_grey_50</color>
+    <color name="colorOnBackground">@color/textColorPrimary</color>
+
+    <color name="colorError">@color/md_red_A400</color>
+    <color name="colorOnError">@color/white</color>
+    <color name="colorWarn">#1AF25C41</color>
+    <color name="colorOnWarn">#F25C41</color>
+
+    <color name="colorBuy">@color/md_green_600</color>
+    <color name="colorSell">@color/md_red_600</color>
+
+    <color name="textColorWarn">@color/colorOnWarn</color>
+    <color name="textColorError">@color/colorError</color>
+
+    <color name="textColorPrimary">@color/md_grey_900</color>
+    <color name="textColorSecondary">@color/md_grey_700</color>
+    <color name="textColorTertiary">@color/md_grey_500</color>
+    <color name="colorDivider">@color/md_grey_300</color>
+</resources>

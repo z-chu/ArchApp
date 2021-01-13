@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_http_code_502">El servidor no responde, vuelva a intentar más tarde.</string>
+    <string name="error_new_password_atlast_three_char">Caracteres de 8–32 bits, que incluyen al menos tres de los siguientes tipos: números, letras mayúsculas, letras minúsculas y símbolos especiales</string>
+    <string name="error_new_password_cannot_equel_old_password">Las dos contraseñas introducidas no se coinciden</string>
+    <string name="error_opening_the_camera">Error al abrir la cámara</string>
+    <string name="error_server">Error desconocido del servidor</string>
+    <string name="exception_connect">Falló la conexión de red, vuelva a intentar  más tarde</string>
+    <string name="exception_connection_was_rest">La conexión se ha restablecido, vuelva a intentar más tarde.</string>
+    <string name="exception_default">Ha ocurrido un error, vuelva a intentar más tade. </string>
+    <string name="exception_json">Error de análisis de datos</string>
+    <string name="exception_protocol_error">Error en el protocolo de red, vuelva a intentar. </string>
+    <string name="exception_security">Permisos del sistema insuficientes</string>
+    <string name="exception_socket_time_out">Se ha agotado el tiempo de espera de la conexión de red, vuelva a intentar más tarde</string>
+    <string name="exception_ssl">La verificación del certidicado de red ha fallado</string>
+    <string name="exception_timeout">El tiempo de espera se ha agotado, vuelva a intentar más tarde.</string>
+    <string name="exception_unknown_host">Sin red, por favor verifique la configuración de red.</string>
+    <string name="message_environment_too_dark_no_flash">El ambiente está muy oscuro. Enciende el flash.</string>
+    <string name="action_manual_authorization">Autorización manual</string>
+    <string name="permission_request_rejected_scanner">Para escanear el código QR, debe ir a Cámara y a Información de la aplicación -> Permisos.</string>
+    <string name="permission_request_access_album_image">El acceso al álbum requiere acceso a Almacenamiento externo. ¡Ve a Información de la aplicación -> Permisos!</string>
+</resources>

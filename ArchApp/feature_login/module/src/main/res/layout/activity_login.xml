@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/bg_root_login">
+
+    <com.ocnyang.contourview.ContourView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:contour_style="Clouds"
+        app:shader_endcolor="#504caf50"
+        app:shader_mode="RadialGradient"
+        app:shader_startcolor="#99388e3c"
+        app:shader_style="LeftToBottom"
+        tools:visibility="gone"
+        app:smoothness="0.25"/>
+
+
+
+
+    <com.gelitenight.waveview.library.WaveView
+        android:id="@+id/wave"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:layout_gravity="bottom"
+        android:layout_alignParentBottom="true"/>
+
+
+</FrameLayout>

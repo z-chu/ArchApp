@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Base.Theme.Saltoken" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+        <!-- Surface brand color. -->
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <!-- Background brand color. -->
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?colorPrimaryVariant</item>
+
+        <!-- Trade color. -->
+        <item name="colorSell">@color/colorSell</item>
+        <item name="colorBuy">@color/colorBuy</item>
+        <!-- Other color.-->
+        <item name="colorControlNormal">@color/textColorTertiary</item>
+
+        <!-- Customize your theme here. -->
+        <item name="tabStyle">@style/Widget.Saltoken.TabLayout</item>
+        <item name="materialButtonStyle">@style/Widget.Saltoken.Button</item>
+        <item name="textInputStyle">@style/Widget.Saltoken.TextInputLayout</item>
+        <item name="editTextStyle">@style/Widget.Saltoken.TextInputEditText</item>
+
+        <!--不设elevationOverlayEnabled为false,在有一些较暗的颜色时，会在设置elevation的view的背景上 铺上一层 elevationOverlayColor -->
+        <item name="elevationOverlayEnabled">false</item>
+
+        <!--Text color. -->
+        <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="android:textColorSecondary">@color/textColorSecondary</item>
+        <item name="android:textColorTertiary">@color/textColorTertiary</item>
+        <item name="android:textColorPrimaryInverse">@color/textColorTertiary</item>
+        <item name="android:textColorSecondaryInverse">@color/textColorSecondary</item>
+        <item name="android:textColorTertiaryInverse">@color/textColorPrimary</item>
+
+        <!--divider-->
+        <item name="android:dividerHeight">@dimen/divider_height</item>
+        <item name="android:listDivider">@drawable/abc_divider_vertical</item>
+        <item name="dividerVertical">@drawable/abc_divider_vertical</item>
+        <item name="dividerHorizontal">@drawable/abc_divider_horizontal</item>
+
+        <!--shapeAppearance-->
+        <item name="shapeAppearanceSmallComponent">
+            @style/ShapeAppearance.Saltoken.SmallComponent
+        </item>
+    </style>
+
+
+    <style name="Base.Theme.Saltoken.Light">
+        <item name="android:statusBarColor">@color/md_grey_400</item>
+    </style>
+
+    <style name="ShapeAppearance.Saltoken.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">2dp</item>
+    </style>
+
+</resources>

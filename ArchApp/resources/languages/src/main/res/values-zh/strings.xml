@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_http_code_502">服务器响应失败，请稍后再试。</string>
+    <string name="error_new_password_atlast_three_char">8–32位字符，至少包含数字、大写字母、小写字母、特殊符号其中3种</string>
+    <string name="error_new_password_cannot_equel_old_password">两次密码输入不一致</string>
+    <string name="error_opening_the_camera">打开相机出错</string>
+    <string name="error_server">服务器未知错误</string>
+    <string name="exception_connect">网络连接失败,请稍后再试</string>
+    <string name="exception_connection_was_rest">连接被重置，请稍后再试</string>
+    <string name="exception_default">出错了,请稍后再试</string>
+    <string name="exception_json">数据解析错误</string>
+    <string name="exception_protocol_error">网络协议出错，请重试</string>
+    <string name="exception_security">系统权限不足</string>
+    <string name="exception_socket_time_out">网络连接超时,请稍后再试</string>
+    <string name="exception_ssl">网络证书验证失败</string>
+    <string name="exception_timeout">等待超时，请稍后再试</string>
+    <string name="exception_unknown_host">当前无网络，请检查网络设置</string>
+    <string name="message_environment_too_dark_no_flash">环境过暗，请打开闪光灯</string>
+    <string name="action_manual_authorization">去手动授权</string>
+    <string name="permission_request_rejected_scanner">扫描二维码需要访问“相机”，请到 “应用信息 -> 权限” 中授予！</string>
+    <string name="permission_request_access_album_image">访问相册图片需要访问“外部存储器”，请到 “应用信息 -> 权限” 中授予！</string>
+
+    <string name="action_try_again">再试一次</string>
+
+</resources>

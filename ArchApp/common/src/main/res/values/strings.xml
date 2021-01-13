@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="android_common_feature_application" translatable="false">com.saltoken.common.FeatureApplication</string>
+</resources>

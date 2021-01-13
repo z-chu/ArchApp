@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="error_http_code_502">サーバーの応答に失敗しました。後ほどもう一度お試しください。</string>
+    <string name="error_new_password_atlast_three_char">8–32文字、少なくとも数字、大文字、小文字、特殊記号のうち3つを含みます。</string>
+    <string name="error_new_password_cannot_equel_old_password">二回入力したパスワードが一致しません</string>
+    <string name="error_opening_the_camera">カメラを開く際にエラー</string>
+    <string name="error_server">サーバー不明エラー</string>
+    <string name="exception_connect">ネットワーク接続に失敗しました。後ほどもう一度お試しください。</string>
+    <string name="exception_connection_was_rest">接続がリセットされました。後ほどもう一度お試しください。</string>
+    <string name="exception_default">エラーが発生しました、後ほどもう一度お試しください。</string>
+    <string name="exception_json">データ分析エラー</string>
+    <string name="exception_protocol_error">ネットワークプロトコルエラーです。もう一度お試しください</string>
+    <string name="exception_security">システムの権限が不足です、</string>
+    <string name="exception_socket_time_out">ネットワーク接続がタイムアウトしました。後ほどもう一度お試しください。</string>
+    <string name="exception_ssl">ネットワーク証明書の検証に失敗しました。</string>
+    <string name="exception_timeout">タイムアウトしました。後ほどもう一度お試しください。</string>
+    <string name="exception_unknown_host">現在はネットワークが見つかりません、ネットワーク設定を確認してください。</string>
+    <string name="message_environment_too_dark_no_flash">周りが暗いので、フラッシュをつけてください。</string>
+    <string name="action_manual_authorization">設定</string>
+    <string name="permission_request_rejected_scanner">QRコードをスキャンするには「カメラ」にアクセスして、「APP情報->権限」を付与してください。</string>
+    <string name="permission_request_access_album_image">アルバムの画像を読み取るには、「外部メモリ」にアクセスする必要があります。「APP情報 -> 権限」を操作してください。</string>
+
+    <string name="action_try_again">再試行</string>
+
+</resources>

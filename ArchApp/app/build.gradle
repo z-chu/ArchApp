@@ -1,0 +1,69 @@
+import plugin.vesions.AndroidX
+import plugin.vesions.DataModules
+import plugin.vesions.Modules
+import plugin.vesions.ResModules
+import plugin.vesions.FeatureLogin
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+apply from: '../android_common.gradle'
+android {
+
+    defaultConfig {
+        applicationId "com.github.zchu.archapp"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String', 'LEANCLOUD_SERVER_URL', '"https://fn78orw2.api.lncld.net/1.1/"'
+        buildConfigField 'String', 'UM_CHANNEL', '"default"'
+
+
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation project(Modules.commonBase)
+    implementation project(Modules.common)
+    implementation project(Modules.remoteBase)
+    implementation project(ResModules.languages)
+    implementation project(ResModules.styles)
+    implementation project(DataModules.model)
+
+    implementation project(FeatureLogin.module)
+    implementation project(FeatureLogin.moduleService)
+
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appcompat
+    implementation AndroidX.cardview
+    implementation AndroidX.recyclerview
+    implementation 'com.google.android.material:material:1.2.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'androidx.navigation:navigation-fragment:2.3.2'
+    implementation 'androidx.navigation:navigation-ui:2.3.2'
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.2.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0'
+    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
+    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+
+}
