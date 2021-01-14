@@ -12,7 +12,11 @@ object AppKoinStarter {
 
      private val modules = listOf(
          appModule,
-         loginModule(BuildConfig.LEANCLOUD_SERVER_URL)
+         loginModule(
+             BuildConfig.LEANCLOUD_SERVER_URL,
+             BuildConfig.LEANCLOUD_APP_ID,
+             BuildConfig.LEANCLOUD_APP_KEY
+         )
      )
 
     private val properties=mapOf(

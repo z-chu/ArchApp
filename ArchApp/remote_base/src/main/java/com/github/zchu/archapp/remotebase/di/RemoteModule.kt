@@ -28,11 +28,16 @@ fun remoteModule(
     return module
 }
 
-fun createOkHttpClient(context: Context, isDebug: Boolean, name: String): OkHttpClient {
+fun createOkHttpClient(
+    context: Context,
+    isDebug: Boolean,
+    name: String,
+    block: (OkHttpClient.Builder) -> Unit = {}
+): OkHttpClient {
     val builder = OkHttpClient.Builder()
 
     builder.cache(createRemoteCache(context, name))
-
+    block.invoke(builder)
     if (isDebug) {
         val httpLoggingInterceptor = HttpLoggingInterceptor()
         httpLoggingInterceptor.level = HttpLoggingInterceptor.Level.BODY

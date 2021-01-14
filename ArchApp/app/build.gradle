@@ -16,6 +16,9 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         buildConfigField 'String', 'LEANCLOUD_SERVER_URL', '"https://fn78orw2.api.lncld.net/1.1/"'
+        buildConfigField 'String', 'LEANCLOUD_APP_ID', '"fn78orw2hVO4V4d5n8VBypj7-gzGzoHsz"'
+        buildConfigField 'String', 'LEANCLOUD_APP_KEY', '"eGNJCnxUVelIBTo14A1SQkdr"'
+
         buildConfigField 'String', 'UM_CHANNEL', '"default"'
 
 

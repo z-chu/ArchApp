@@ -18,8 +18,6 @@ import retrofit2.http.Query;
 
 public interface LoginService {
 
-    String BASE_URL = "https://fn78orw2.api.lncld.net/1.1/";
-
 
     /**
      * 注册用户

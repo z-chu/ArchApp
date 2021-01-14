@@ -12,8 +12,11 @@ import com.gelitenight.waveview.library.WaveView
 import com.github.zchu.archapp.login.anim.WaveHelper
 import com.github.zchu.archapp.login.service.SignInActivityStarter
 import com.github.zchu.archapp.login.viewmodel.LoginViewModel
+import com.github.zchu.common.help.showToastLong
+import com.github.zchu.common.help.showToastShort
 import com.rengwuxian.materialedittext.MaterialEditText
 import com.saltoken.common.base.BaseActivity
+import com.saltoken.commonbase.models.observeWork
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SignInActivity : BaseActivity() {
@@ -35,6 +38,20 @@ class SignInActivity : BaseActivity() {
         btnSignIn.setOnClickListener {
             login()
         }
+        loginViewModel
+            .loginResult
+            .observeWork(this,
+                onLoading = {
+                    showLoading()
+                },
+                onSuccess = {
+                    showToastLong("登录成功：$it")
+                    showContent()
+                },
+                onError = {
+                    showError(it.message)
+                }
+            )
     }
 
     private fun initView() {
@@ -66,7 +83,21 @@ class SignInActivity : BaseActivity() {
     }
 
     private fun login() {
-        loginViewModel.login(etUsername.text.toString(), etPassword.text.toString())
+        val username = etUsername.text.toString()
+        if (username.isBlank()) {
+            etUsername.error = "用户名不能为空"
+            return
+        }
+        val password = etPassword.text.toString()
+        if (password.isBlank()) {
+            etPassword.error = "密码不能为空"
+            return
+        }
+        if (password.length < 6) {
+            etPassword.error = "请输入6到16位密码"
+            return
+        }
+        loginViewModel.loginOrRegister(username, password)
     }
 
 
@@ -79,6 +110,33 @@ class SignInActivity : BaseActivity() {
         super.onPause()
         mWaveHelper.cancel()
     }
+
+    fun showContent() {
+        etUsername.isEnabled = true
+        etPassword.isEnabled = true
+        btnSignIn.progress = 100
+        dialog.setOnDismissListener {
+            finish()
+            overridePendingTransition(0, R.anim.zoom_out)
+        }
+        btnSignIn.postDelayed({ dialog.dismiss() }, 200)
+    }
+
+    fun showLoading() {
+        etUsername.isEnabled = false
+        etPassword.isEnabled = false
+        btnSignIn.progress = 50
+    }
+
+    fun showError(errorMsg: String?) {
+        etUsername.isEnabled = true
+        etPassword.isEnabled = true
+        btnSignIn.progress = 0
+        errorMsg?.let {
+            showToastShort(it)
+        }
+    }
+
 
     companion object : SignInActivityStarter {
 
