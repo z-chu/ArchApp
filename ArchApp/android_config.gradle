@@ -1,5 +1,6 @@
 ext {
     config = [
+            compileSdk  : 30,
             minSdk     : 21,
             targetSdk  : 30,
             versionCode: 1000,//(1)(00)(000):(大版本)(小版本)(小功能和修复)

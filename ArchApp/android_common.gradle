@@ -2,7 +2,7 @@
 def cfg = rootProject.ext.config // 项目配置
 
 android {
-    compileSdkVersion cfg.targetSdk
+    compileSdkVersion cfg.compileSdk
     defaultConfig {
         minSdkVersion cfg.minSdk
         targetSdkVersion cfg.targetSdk
