@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.github.zchu.archapp.login.data.LoginDataSource
 import com.github.zchu.archapp.login.data.bean.UserBean
+import com.github.zchu.archapp.login.usecase.SaveSessionUseCase
 import com.github.zchu.common.rx.RxViewModel
 import com.github.zchu.model.WorkResult
 import com.saltoken.commonbase.concurrent.AppSchedulers
@@ -12,7 +13,8 @@ import com.saltoken.commonbase.rx.subscribeTo
 
 class LoginViewModel(
     private val loginDataSource: LoginDataSource,
-    private val appSchedulers: AppSchedulers
+    private val appSchedulers: AppSchedulers,
+    private val saveSessionUseCase: SaveSessionUseCase
 ) : RxViewModel() {
 
     private val _loginResult = MutableLiveData<WorkResult<UserBean>>()
@@ -24,7 +26,9 @@ class LoginViewModel(
         loginDataSource
             .login(username, password)
             .applySchedulers(appSchedulers)
-            .subscribeTo(_loginResult)
+            .subscribeTo(_loginResult, onSuccess = {
+                saveSessionUseCase.invoke(it)
+            })
             .disposeWhenCleared()
     }
 

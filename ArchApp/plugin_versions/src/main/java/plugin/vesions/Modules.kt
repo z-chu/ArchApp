@@ -4,6 +4,7 @@ object Modules{
     const val common = ":common"
     const val commonBase = ":common_base"
     const val remoteBase = ":remote_base"
+    const val userSession = ":user_session"
 }
 
 object ResModules {

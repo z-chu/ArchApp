@@ -56,6 +56,7 @@ dependencies {
     implementation 'com.rengwuxian.materialedittext:library:2.1.4'
 
 
+    implementation project(Modules.userSession)
     implementation project(Modules.remoteBase)
     implementation project(Modules.commonBase)
     implementation project(Modules.common)

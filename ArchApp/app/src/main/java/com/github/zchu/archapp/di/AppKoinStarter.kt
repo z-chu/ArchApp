@@ -3,6 +3,7 @@ package com.github.zchu.archapp.di
 import android.content.Context
 import com.github.zchu.archapp.BuildConfig
 import com.github.zchu.archapp.login.di.loginModule
+import com.github.zchu.archapp.usersession.di.userSessionModule
 import com.saltoken.commonbase.koin.isDebug
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -16,7 +17,8 @@ object AppKoinStarter {
              BuildConfig.LEANCLOUD_SERVER_URL,
              BuildConfig.LEANCLOUD_APP_ID,
              BuildConfig.LEANCLOUD_APP_KEY
-         )
+         ),
+         userSessionModule
      )
 
     private val properties=mapOf(

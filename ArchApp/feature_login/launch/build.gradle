@@ -43,6 +43,7 @@ dependencies {
 
     implementation project(Modules.commonBase)
     implementation project(Modules.common)
+    implementation project(Modules.userSession)
     implementation project(FeatureLogin.module)
     implementation project(FeatureLogin.moduleService)
 

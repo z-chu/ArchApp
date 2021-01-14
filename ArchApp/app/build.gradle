@@ -45,6 +45,7 @@ dependencies {
     implementation project(Modules.commonBase)
     implementation project(Modules.common)
     implementation project(Modules.remoteBase)
+    implementation project(Modules.userSession)
     implementation project(ResModules.languages)
     implementation project(ResModules.styles)
     implementation project(DataModules.model)

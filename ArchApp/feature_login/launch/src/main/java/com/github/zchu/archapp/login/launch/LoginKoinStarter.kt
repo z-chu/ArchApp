@@ -2,6 +2,7 @@ package com.github.zchu.archapp.login.launch
 
 import android.content.Context
 import com.github.zchu.archapp.login.di.loginModule
+import com.github.zchu.archapp.usersession.di.userSessionModule
 import com.saltoken.commonbase.concurrent.AppSchedulers
 import com.saltoken.commonbase.koin.isDebug
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
@@ -21,7 +22,8 @@ object LoginKoinStarter {
         ),
         module {
             single { AppSchedulers(AndroidSchedulers.mainThread(), Schedulers.io()) }
-        }
+        },
+        userSessionModule
     )
 
     private val properties = mapOf(

@@ -5,6 +5,7 @@ import com.github.zchu.archapp.login.SignInActivity
 import com.github.zchu.archapp.login.data.LoginDataSource
 import com.github.zchu.archapp.login.data.LoginService
 import com.github.zchu.archapp.login.service.SignInActivityStarter
+import com.github.zchu.archapp.login.usecase.SaveSessionUseCase
 import com.github.zchu.archapp.login.viewmodel.LoginViewModel
 import com.github.zchu.archapp.remotebase.di.createOkHttpClient
 import com.github.zchu.archapp.remotebase.di.createWebService
@@ -37,7 +38,11 @@ fun loginModule(url: String, leanCloudAppId: String, leanCloudAppKey: String) = 
     }
 
     viewModel {
-        LoginViewModel(get(), get())
+        LoginViewModel(get(), get(), get())
+    }
+
+    factory {
+        SaveSessionUseCase(get())
     }
 
     factory<SignInActivityStarter> {

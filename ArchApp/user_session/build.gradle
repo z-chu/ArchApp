@@ -1,3 +1,5 @@
+import plugin.vesions.Koin
+
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -33,6 +35,12 @@ android {
 }
 
 dependencies {
+
+    implementation files('libs/mmkv-StaticCpp-release.aar')//MMKV
+    implementation 'com.getkeepsafe.relinker:relinker:1.4.1'
+
+    implementation Koin.core
+    implementation Koin.androidCore
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.2'
