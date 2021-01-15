@@ -5,11 +5,16 @@ import androidx.lifecycle.MutableLiveData
 import com.github.zchu.archapp.login.data.LoginDataSource
 import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.usecase.SaveSessionUseCase
+import com.github.zchu.bridge._subscribe
+import com.github.zchu.common.livedata.safeSetValue
 import com.github.zchu.common.rx.RxViewModel
+import com.github.zchu.model.Failure
+import com.github.zchu.model.Loading
+import com.github.zchu.model.Success
 import com.github.zchu.model.WorkResult
 import com.saltoken.commonbase.concurrent.AppSchedulers
+import com.saltoken.commonbase.models.bindCanceler
 import com.saltoken.commonbase.rx.applySchedulers
-import com.saltoken.commonbase.rx.subscribeTo
 
 class LoginViewModel(
     private val loginDataSource: LoginDataSource,
@@ -26,10 +31,23 @@ class LoginViewModel(
         loginDataSource
             .login(username, password)
             .applySchedulers(appSchedulers)
-            .subscribeTo(_loginResult, onSuccess = {
-                saveSessionUseCase.invoke(it)
-            })
-            .disposeWhenCleared()
+            ._subscribe {
+                _onSubscribe {
+                    it.disposeWhenCleared()
+                    _loginResult.safeSetValue(Loading<UserBean>().bindCanceler(it, _loginResult))
+
+                }
+                _onError {
+                    _loginResult.safeSetValue(Failure(it))
+                }
+
+                _onNext {
+                    saveSessionUseCase(it)
+                    _loginResult.safeSetValue(Success(it))
+                }
+            }
+
+
     }
 
 }

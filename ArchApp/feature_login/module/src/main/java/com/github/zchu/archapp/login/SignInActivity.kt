@@ -12,6 +12,7 @@ import androidx.annotation.MainThread
 import com.dd.processbutton.iml.ActionProcessButton
 import com.gelitenight.waveview.library.WaveView
 import com.github.zchu.archapp.login.anim.WaveHelper
+import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.service.SignInActivityStarter
 import com.github.zchu.archapp.login.viewmodel.LoginViewModel
 import com.github.zchu.common.help.showToastLong
@@ -49,7 +50,7 @@ class SignInActivity : BaseActivity() {
                 },
                 onSuccess = {
                     showToastLong("登录成功：$it")
-                    showContent()
+                    showSuccess(it)
                 },
                 onError = {
                     showError(it.message)
@@ -114,7 +115,7 @@ class SignInActivity : BaseActivity() {
         mWaveHelper.cancel()
     }
 
-    fun showContent() {
+    private fun showSuccess(userBean: UserBean) {
         startPendingIntent()
         etUsername.isEnabled = true
         etPassword.isEnabled = true
@@ -127,13 +128,13 @@ class SignInActivity : BaseActivity() {
         notifyLogged()
     }
 
-    fun showLoading() {
+    private fun showLoading() {
         etUsername.isEnabled = false
         etPassword.isEnabled = false
         btnSignIn.progress = 50
     }
 
-    fun showError(errorMsg: String?) {
+    private fun showError(errorMsg: String?) {
         etUsername.isEnabled = true
         etPassword.isEnabled = true
         btnSignIn.progress = 0
