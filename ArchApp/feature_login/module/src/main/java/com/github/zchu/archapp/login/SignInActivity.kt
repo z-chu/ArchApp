@@ -6,7 +6,9 @@ import android.content.DialogInterface
 import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
+import android.os.Looper
 import android.view.KeyEvent
+import androidx.annotation.MainThread
 import com.dd.processbutton.iml.ActionProcessButton
 import com.gelitenight.waveview.library.WaveView
 import com.github.zchu.archapp.login.anim.WaveHelper
@@ -18,6 +20,7 @@ import com.rengwuxian.materialedittext.MaterialEditText
 import com.saltoken.common.base.BaseActivity
 import com.saltoken.commonbase.models.observeWork
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import java.lang.ref.WeakReference
 
 class SignInActivity : BaseActivity() {
 
@@ -112,6 +115,7 @@ class SignInActivity : BaseActivity() {
     }
 
     fun showContent() {
+        startPendingIntent()
         etUsername.isEnabled = true
         etPassword.isEnabled = true
         btnSignIn.progress = 100
@@ -120,6 +124,7 @@ class SignInActivity : BaseActivity() {
             overridePendingTransition(0, R.anim.zoom_out)
         }
         btnSignIn.postDelayed({ dialog.dismiss() }, 200)
+        notifyLogged()
     }
 
     fun showLoading() {
@@ -138,15 +143,62 @@ class SignInActivity : BaseActivity() {
     }
 
 
+    private fun startPendingIntent() {
+        val pendingActivityIntent = intent.getParcelableExtra<Intent>(K_PENDING_ACTIVITY_INTENT)
+        if (pendingActivityIntent != null) {
+            if (packageManager.resolveActivity(pendingActivityIntent, 0) != null) {
+                startActivity(pendingActivityIntent)
+            }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        cleanCallback()
+    }
+
     companion object : SignInActivityStarter {
 
-        override fun newIntent(context: Context, pendingIntent: Intent?): Intent {
-            return Intent(context, SignInActivity::class.java)
+        private const val K_PENDING_ACTIVITY_INTENT = "pending_activity_intent"
+
+        private var callbackReference: WeakReference<(() -> Unit)>? = null
+
+        override fun newIntent(context: Context, pendingActivityIntent: Intent?): Intent {
+            val intent = Intent(context, SignInActivity::class.java)
+            pendingActivityIntent?.let {
+                intent.putExtra(K_PENDING_ACTIVITY_INTENT, it)
+            }
+            return intent
         }
 
-        override fun start(context: Context, pendingIntent: Intent?) {
-            context.startActivity(newIntent(context, pendingIntent))
+        override fun start(context: Context, pendingActivityIntent: Intent?) {
+            context.startActivity(newIntent(context, pendingActivityIntent))
         }
+
+
+        /**
+         * 限制只能在主线程调用，以防出现并发导致回调不正确
+         */
+        @MainThread
+        override fun start(context: Context, callback: () -> Unit) {
+            check(Looper.getMainLooper() == Looper.myLooper())
+            callbackReference = WeakReference(callback)
+            context.startActivity(newIntent(context))
+        }
+
+        @MainThread
+        private fun notifyLogged() {
+            check(Looper.getMainLooper() == Looper.myLooper())
+            callbackReference?.get()?.invoke()
+            callbackReference = null
+        }
+
+        @MainThread
+        private fun cleanCallback() {
+            check(Looper.getMainLooper() == Looper.myLooper())
+            callbackReference = null
+        }
+
 
     }
 
