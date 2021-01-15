@@ -1,6 +1,5 @@
 package com.github.zchu.archapp.usersession
 
-import android.content.Context
 import android.os.Looper
 import androidx.lifecycle.LiveData
 import com.github.zchu.archapp.usersession.model.UserSession
@@ -12,7 +11,7 @@ private const val K_USER_ID = "user_id"
 private const val K_USER_NAME = "user_name"
 private const val K_SESSION_TOKEN = "session_token"
 
-internal class UserSessionPreferences(context: Context, private val mmkv: MMKV) {
+internal class UserSessionPreferences(private val mmkv: MMKV) {
 
     private var sessionVersion: Int
         get() = mmkv.getInt(K_SESSION_VERSION, 0)
@@ -59,9 +58,6 @@ internal class UserSessionPreferences(context: Context, private val mmkv: MMKV) 
         _liveSession.notifyDataSetChanged(session)
     }
 
-    fun notifyDataSetChanged() {
-        _liveSession.notifyDataSetChanged()
-    }
 
     fun hasSession(): Boolean {
         return loadSession() != null

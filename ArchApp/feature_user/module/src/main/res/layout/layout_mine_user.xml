@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="148dp"
+    android:background="@color/colorPrimary"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin">
+
+    <TextView
+        android:id="@+id/tv_login_flag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="未登录"
+        android:textColor="?android:textColorPrimaryInverse"
+        android:textSize="@dimen/text_size_headline"
+        tools:visibility="gone" />
+
+    <TextView
+        android:id="@+id/tv_login_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login_flag"
+        android:layout_marginTop="10dp"
+        android:text="登录更安全,可以同步书籍,多设备切换"
+        android:textColor="?android:textColorSecondaryInverse"
+        tools:visibility="gone" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/tv_action_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_login_hint"
+        android:layout_marginTop="12.0dp"
+        android:gravity="center"
+        android:paddingBottom="6dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="6dp"
+        app:backgroundTint="@color/colorSurface"
+        android:text="点击登录"
+        android:textSize="12sp"
+        app:cornerRadius="50dp"
+        android:textColor="?colorSecondary"
+        tools:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/rl_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <ImageView
+            android:id="@+id/iv_user_head"
+            android:layout_width="74dp"
+            android:layout_height="74dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="16dp"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
+        <View
+            android:id="@+id/center_flag"
+            android:layout_width="0dp"
+            android:layout_height="8dp"
+            android:layout_centerInParent="true"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/iv_user_head"
+            android:layout_alignTop="@id/iv_user_head"
+            android:layout_marginRight="8dp"
+            android:layout_toLeftOf="@+id/iv_user_arrow"
+            android:layout_toRightOf="@id/iv_user_head"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/center_flag"
+                android:layout_toRightOf="@id/iv_user_head"
+                android:ellipsize="end"
+                android:maxLength="12"
+                android:maxLines="1"
+                android:text="不开车的擎天柱"
+                android:textColor="?android:textColorSecondaryInverse"
+                android:textSize="@dimen/text_size_headline"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="8dp" />
+
+            <TextView
+                android:id="@+id/tv_action_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/center_flag"
+                android:layout_marginRight="8dp"
+                android:layout_toLeftOf="@+id/iv_user_arrow"
+                android:layout_toRightOf="@id/iv_user_head"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="所有的伟大，都源于一个勇敢的开始。"
+                android:textColor="?android:textColorSecondaryInverse"
+                android:visibility="gone"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_user_arrow"
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:scaleType="fitCenter"
+            android:visibility="gone"
+            app:srcCompat="@drawable/ic_arrow_open_setting"
+            tools:visibility="visible"
+            app:tint="?android:textColorSecondaryInverse" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

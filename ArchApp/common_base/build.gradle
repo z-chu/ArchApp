@@ -1,9 +1,11 @@
+import plugin.vesions.Glide
 import plugin.vesions.Koin
 import plugin.vesions.Rx
 
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -64,6 +66,12 @@ dependencies {
     api Rx.rxkotlin
     implementation "com.github.z-chu:ReactiveNetwork:v4.0.0-rx3"
 
+    //glide
+    api Glide.glide
+    api Glide.glideIntegration
+    annotationProcessor Glide.glideCompiler
+    kapt Glide.glideCompiler
+
     //json
     api "com.google.code.gson:gson:2.8.6"
 
@@ -75,8 +83,6 @@ dependencies {
     //widget
     api 'com.github.z-chu:BaseRecyclerViewAdapterHelper:3.0.5'
     api 'com.github.zyyoona7:recyclerviewdivider:1.0.2'
-
-
 
 
     //android-common-kit

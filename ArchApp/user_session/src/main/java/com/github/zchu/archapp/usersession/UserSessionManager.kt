@@ -4,19 +4,24 @@ import android.content.Context
 import android.util.Log
 import androidx.lifecycle.LiveData
 import com.getkeepsafe.relinker.ReLinker
+import com.github.zchu.archapp.usersession.model.UserProfile
 import com.github.zchu.archapp.usersession.model.UserSession
 import com.tencent.mmkv.MMKV
 
-class UserSessionManager internal constructor(private val context: Context) {
+class UserSessionManager internal constructor(context: Context) {
 
     private val userSessionPreferences = UserSessionPreferences(
-        context.applicationContext,
         MMKV.mmkvWithID("user_session", MMKV.MULTI_PROCESS_MODE)
+    )
+
+    private val userProfilePreferences = UserProfilePreferences(
+        MMKV.mmkvWithID("user_profile", MMKV.MULTI_PROCESS_MODE)
     )
 
     init {
         if (!isLoggedIn()) {
             userSessionPreferences.clear()
+            userProfilePreferences.clear()
         }
     }
 
@@ -24,6 +29,9 @@ class UserSessionManager internal constructor(private val context: Context) {
 
     val liveSession: LiveData<UserSession?>
         get() = userSessionPreferences.liveSession
+
+    val liveUserProfile: LiveData<UserProfile?>
+        get() = userProfilePreferences.liveUserProfile
 
     fun isLoggedIn(): Boolean {
         return userSessionPreferences.hasSession()
@@ -37,6 +45,15 @@ class UserSessionManager internal constructor(private val context: Context) {
     fun saveSession(session: UserSession) {
         userSessionPreferences.saveSession(session)
     }
+
+    fun loadUserProfile(): UserProfile? {
+        return userProfilePreferences.loadUserProfile()
+    }
+
+    fun saveUserProfile(userProfile: UserProfile) {
+        userProfilePreferences.saveUserProfile(userProfile)
+    }
+
 
     /**
      * 如果收到token过期，则调用该方法
@@ -59,6 +76,7 @@ class UserSessionManager internal constructor(private val context: Context) {
 
     fun clear() {
         userSessionPreferences.clear()
+
     }
 
     inline fun <T> doCheckLoggedIn(block: (UserSession) -> T): T {

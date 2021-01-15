@@ -2,8 +2,8 @@
 <resources>
     <color name="colorPrimary">@color/md_green_500</color>
     <color name="colorPrimaryVariant">@color/md_green_700</color>
-    <color name="colorSecondary">@color/md_green_A400</color>
-    <color name="colorSecondaryVariant">@color/md_green_A400</color>
+    <color name="colorSecondary">@color/md_light_green_600</color>
+    <color name="colorSecondaryVariant">@color/md_light_green_600</color>
     <color name="colorOnPrimary">@color/white</color>
     <color name="colorOnSecondary">@color/white</color>
 
@@ -26,5 +26,8 @@
     <color name="textColorPrimary">@color/md_grey_900</color>
     <color name="textColorSecondary">@color/md_grey_700</color>
     <color name="textColorTertiary">@color/md_grey_500</color>
+    <color name="textColorPrimaryInverse">@color/white</color>
+    <color name="textColorSecondaryInverse">@color/white_A87</color>
+    <color name="textColorTertiaryInverse">@color/white_A60</color>
     <color name="colorDivider">@color/md_grey_300</color>
 </resources>

@@ -29,5 +29,6 @@
 
     <string name="action_try_again">Try again</string>
 
+    <string name="empty_user_bio">还没有签名</string>
 
 </resources>
