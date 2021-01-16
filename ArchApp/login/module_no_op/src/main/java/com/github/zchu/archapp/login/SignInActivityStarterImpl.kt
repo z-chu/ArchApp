@@ -7,7 +7,7 @@ import com.github.zchu.archapp.login.service.SignInActivityStarter
 class SignInActivityStarterImpl : SignInActivityStarter {
 
     override fun newIntent(context: Context, pendingActivityIntent: Intent?): Intent {
-        TODO()
+      throw RuntimeException()
     }
 
     override fun start(context: Context, pendingActivityIntent: Intent?) {

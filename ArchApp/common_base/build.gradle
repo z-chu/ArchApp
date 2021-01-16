@@ -19,7 +19,7 @@ dependencies {
 
 
     //kotlin
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    api  Depends.Kotlin.stdlibJdk
 
     //koin
     api Depends.Koin.core

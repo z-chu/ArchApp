@@ -3,6 +3,7 @@ import plugin.vesions.*
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 apply from: '../android_common.gradle'
 android {
@@ -72,6 +73,11 @@ dependencies {
     testImplementation Depends.junit
     androidTestImplementation Depends.androidTestJunit
     androidTestImplementation Depends.espressoCore
+
+    // auto-service
+    api 'com.google.auto.service:auto-service-annotations:1.0-rc6'
+    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
+    kapt 'com.google.auto.service:auto-service:1.0-rc6'
 
 
 }
