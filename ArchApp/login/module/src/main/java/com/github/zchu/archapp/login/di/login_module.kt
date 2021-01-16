@@ -7,10 +7,10 @@ import com.github.zchu.archapp.login.data.LoginService
 import com.github.zchu.archapp.login.service.SignInActivityStarter
 import com.github.zchu.archapp.login.usecase.SaveSessionUseCase
 import com.github.zchu.archapp.login.viewmodel.LoginViewModel
-import com.github.zchu.archapp.remotebase.di.createOkHttpClient
-import com.github.zchu.archapp.remotebase.di.createWebService
-import com.github.zchu.archapp.remotebase.interceptor.HeaderInterceptor
+import com.saltoken.common.remote.createOkHttpClient
+import com.saltoken.common.remote.createWebService
 import com.saltoken.commonbase.koin.isDebug
+import com.saltoken.commonbase.network.HeaderInterceptor
 import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module

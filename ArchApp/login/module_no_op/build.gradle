@@ -31,5 +31,8 @@ android {
 }
 
 dependencies {
+    implementation project(Modules.Login.moduleService)
+    implementation project(Modules.common)
+
 
 }

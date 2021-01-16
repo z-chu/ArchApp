@@ -37,7 +37,7 @@ class LoginDataSource(private val loginService: LoginService) {
                             it.response()?.errorBody()?.string()?.let { json ->
                                 val lcResult: LCResult<*> =
                                     gson.fromJson(json, LCResult::class.java)
-                                if (lcResult.code === 202) {
+                                if (lcResult.code == 202) {
                                     return@onErrorResumeNext login(username, password)
                                 }
                             }

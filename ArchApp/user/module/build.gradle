@@ -18,12 +18,12 @@ android {
 
 dependencies {
 
-    implementation project(ResModules.styles)
-    implementation project(ResModules.languages)
+    implementation project(Modules.Resources.styles)
+    implementation project(Modules.Resources.languages)
     implementation project(Modules.common)
     implementation project(Modules.commonBase)
     implementation project(Modules.userSession)
-    implementation project(FeatureLogin.moduleService)
+    implementation project(Modules.Login.moduleService)
 
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat

@@ -16,4 +16,5 @@ android {
 dependencies {
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat
+    implementation Depends.Koin.core
 }

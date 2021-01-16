@@ -71,7 +71,7 @@ class SignInActivity : BaseActivity() {
         mWaveHelper.start()
         dialog = Dialog(this, R.style.Theme_ArchApp_Dialog_LoginCard)
         dialog.setContentView(R.layout.layout_login_card)
-        dialog.setOnKeyListener(DialogInterface.OnKeyListener { dialogInterface, i, keyEvent ->
+        dialog.setOnKeyListener(DialogInterface.OnKeyListener { dialogInterface, _, keyEvent ->
             if (keyEvent.keyCode == KeyEvent.KEYCODE_BACK) {
                 dialogInterface.dismiss()
                 return@OnKeyListener true

@@ -19,9 +19,17 @@ dependencies {
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat
     implementation Depends.AndroidX.material
+
+    implementation Depends.OkHttp.okhttp
+    implementation Depends.OkHttp.okhttpLogging
+
+    implementation Depends.Retrofit.retrofit
+    implementation Depends.Retrofit.gsonConverter
+    implementation Depends.Retrofit.rxjava3Adapter
+
     api project(Modules.commonBase)
-    implementation project(ResModules.languages)
-    implementation project(ResModules.styles)
+    implementation project(Modules.Resources.languages)
+    implementation project(Modules.Resources.styles)
 
     api 'com.github.z-chu:StatefulView:1.0.8'
 
