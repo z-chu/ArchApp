@@ -18,6 +18,5 @@ subprojects { subProject ->
     if (subProject.name == "app") {
         // 示例可以点击下方链接，查看我另外一个项目
         // https://github.com/hi-dhl/ComposingBuilds-vs-buildSrc/blob/a339c8a24764f8fd212768286cc941aaac48b4ad/Project-ComposingBuild/build.gradle#L20-L50
-    
     }
 }

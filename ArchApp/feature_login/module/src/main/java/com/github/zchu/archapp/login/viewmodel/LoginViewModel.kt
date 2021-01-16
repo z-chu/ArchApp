@@ -29,7 +29,7 @@ class LoginViewModel(
 
     fun loginOrRegister(username: String, password: String) {
         loginDataSource
-            .login(username, password)
+            .loginOrRegister(username, password)
             .applySchedulers(appSchedulers)
             ._subscribe {
                 _onSubscribe {

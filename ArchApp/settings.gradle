@@ -10,7 +10,7 @@ include ':app_data_layer:repository'
 include ':app_data_layer:remote'
 include ':app_data_layer:model'
 include ':app_router'
-includeBuild("plugin_versions")
+includeBuild("../plugin_versions")
 include ':app'
 include ':common'
 include ':common_base'

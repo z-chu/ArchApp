@@ -42,6 +42,9 @@ object Versions {
     val rxjava = "3.0.4"
     val rxkotlin = "3.0.0"
     val rxandroid = "3.0.0"
+
+    val glide = "4.11.0"
+
 }
 
 object AndroidX {
@@ -132,6 +135,12 @@ object Rx {
     val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxandroid}"
 }
 
+object Glide {
+    val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
+    val glideCompiler = "com.github.bumptech.glide:compiler:${Versions.glide}"
+    val glideIntegration = "com.github.bumptech.glide:okhttp3-integration:${Versions.glide}"
+}
+
 
 object Depend {
 
@@ -142,4 +151,6 @@ object Depend {
     val binding = "com.hi-dhl:binding:${Versions.binding}"
     val timber = "com.jakewharton.timber:timber:${Versions.timber}"
 }
+
+
 
