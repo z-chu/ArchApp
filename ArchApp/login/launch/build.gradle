@@ -1,0 +1,37 @@
+import plugin.vesions.*
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply from: '../../android_common.gradle'
+apply from: '../../android_test_deps.gradle'
+
+android {
+
+    defaultConfig {
+        applicationId "com.github.zchu.archapp.login.launch"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+}
+
+dependencies {
+
+
+    implementation project(Modules.commonBase)
+    implementation project(Modules.common)
+    implementation project(Modules.userSession)
+    implementation project(FeatureLogin.module)
+    implementation project(FeatureLogin.moduleService)
+
+
+    implementation Depends.AndroidX.coreKtx
+    implementation Depends.AndroidX.appcompat
+    implementation Depends.AndroidX.material
+    implementation Depends.AndroidX.constraintlayout
+    implementation Depends.AndroidX.lifecycleExtensions
+    implementation Depends.AndroidX.lifecycleRuntime
+    implementation Depends.AndroidX.lifecycleRuntimeKtx
+}

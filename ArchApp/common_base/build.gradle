@@ -1,6 +1,4 @@
-import plugin.vesions.Glide
-import plugin.vesions.Koin
-import plugin.vesions.Rx
+import plugin.vesions.*
 
 plugins {
     id 'com.android.library'
@@ -8,72 +6,50 @@ plugins {
     id 'kotlin-kapt'
 }
 
+apply from: '../android_common.gradle'
+apply from: '../android_test_deps.gradle'
+
 android {
-    compileSdkVersion 30
     defaultConfig {
-        minSdkVersion 21
-        targetSdkVersion 30
-        versionCode 1
-        versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles "consumer-rules.pro"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
     }
 }
 
 dependencies {
 
-    //test
-    testImplementation 'junit:junit:4.13.1'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 
     //kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
 
     //koin
-    api Koin.core
-    api Koin.androidCore
-    api Koin.viewmodel
+    api Depends.Koin.core
+    api Depends.Koin.android
+    api Depends.Koin.viewmodel
 
     //androidx
-    implementation 'androidx.navigation:navigation-ui-ktx:2.3.2'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.3.2'
-    implementation 'androidx.core:core-ktx:1.3.2'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'com.google.android.material:material:1.2.1'
+    implementation Depends.AndroidX.navigationUIKtx
+    implementation Depends.AndroidX.navigationFragmentKtx
+    implementation Depends.AndroidX.coreKtx
+    implementation Depends.AndroidX.appcompat
+    implementation Depends.AndroidX.material
 
     //retrofit
-    api 'com.squareup.retrofit2:retrofit:2.9.0'
+    api  Depends.Retrofit.retrofit
 
     //rx
-    api Rx.rxjava
-    api Rx.rxAndroid
-    api Rx.rxkotlin
+    api Depends.Rx.rxjava
+    api Depends.Rx.rxAndroid
+    api Depends.Rx.rxkotlin
     implementation "com.github.z-chu:ReactiveNetwork:v4.0.0-rx3"
 
     //glide
-    api Glide.glide
-    api Glide.glideIntegration
-    annotationProcessor Glide.glideCompiler
-    kapt Glide.glideCompiler
+    api Depends.Glide.glide
+    api Depends.Glide.glideIntegration
+    annotationProcessor Depends.Glide.glideCompiler
+    kapt Depends.Glide.glideCompiler
 
     //json
-    api "com.google.code.gson:gson:2.8.6"
+    api Depends.gson
 
     //hashes
     implementation "com.github.komputing.khash:sha256:1.0.0-RC5"

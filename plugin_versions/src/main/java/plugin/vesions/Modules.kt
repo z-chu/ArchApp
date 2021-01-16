@@ -7,7 +7,7 @@ object Modules {
     const val userSession = ":user_session"
 
     object User {
-        const val module = ":feature_user:module"
+        const val module = ":user:module"
     }
 }
 
@@ -17,14 +17,14 @@ object ResModules {
 }
 
 object DataModules {
-    const val model = ":app_data_layer:model"
+    const val model = ":data:model"
 
 }
 
 object FeatureLogin {
 
-    const val module = ":feature_login:module"
-    const val moduleNoOp = "::feature_login:module_no_op"
-    const val moduleService = ":feature_login:module_service"
+    const val module = ":login:module"
+    const val moduleNoOp = "::login:module_no_op"
+    const val moduleService = ":login:module_service"
 
 }
