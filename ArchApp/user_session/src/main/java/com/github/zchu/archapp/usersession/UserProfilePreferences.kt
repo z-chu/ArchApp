@@ -3,6 +3,7 @@ package com.github.zchu.archapp.usersession
 import android.os.Looper
 import androidx.lifecycle.LiveData
 import com.github.zchu.archapp.usersession.model.UserProfile
+import com.github.zchu.archapp.usersession.model.UserProfileImpl
 import com.github.zchu.archapp.usersession.model.getSimpleImpl
 import com.google.gson.Gson
 import com.tencent.mmkv.MMKV
@@ -16,7 +17,7 @@ internal class UserProfilePreferences(private val mmkv: MMKV) {
         get() {
             val decodeString = mmkv.decodeString("user_profile_data", null)
             return if (decodeString != null) {
-                gson.fromJson(decodeString, UserProfile::class.java)
+                gson.fromJson(decodeString, UserProfileImpl::class.java)
             } else {
                 null
             }

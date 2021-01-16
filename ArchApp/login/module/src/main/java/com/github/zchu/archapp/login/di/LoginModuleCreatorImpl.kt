@@ -15,7 +15,7 @@ import org.koin.android.ext.koin.androidContext
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
-internal class LoginModuleCreatorImpl() : LoginModuleCreator {
+internal class LoginModuleCreatorImpl : LoginModuleCreator {
 
     override fun loginModule(url: String, leanCloudAppId: String, leanCloudAppKey: String) =
         module {
