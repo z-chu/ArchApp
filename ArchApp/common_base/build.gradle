@@ -33,6 +33,9 @@ dependencies {
     implementation Depends.AndroidX.appcompat
     implementation Depends.AndroidX.material
 
+    //log
+    api Depends.timber
+
     //retrofit
     api  Depends.Retrofit.retrofit
 

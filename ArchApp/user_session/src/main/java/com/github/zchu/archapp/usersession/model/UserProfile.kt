@@ -4,8 +4,8 @@ import java.util.*
 
 interface UserProfile {
     val userId: String
-    val nickname: String
     val username: String
+    val nickname: String?
     var gender: Int
     var headPortrait: String?
     var bio: String?

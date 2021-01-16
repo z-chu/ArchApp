@@ -74,7 +74,7 @@ class MineFragment : BaseFragment() {
 
     private fun setUserDisplay(userSession: UserSession, userProfile: UserProfile?) {
         if (userProfile != null) {
-            val nickname: String = userProfile.nickname
+            val nickname: String? = userProfile.nickname
             if (!TextUtils.isEmpty(nickname)) {
                 tvUsername.text = nickname
             } else {

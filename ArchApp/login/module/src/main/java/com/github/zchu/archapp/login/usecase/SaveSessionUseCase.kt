@@ -20,25 +20,24 @@ class SaveSessionUseCase(private val userSessionManager: UserSessionManager) {
                 )
             )
             //save userProfile
-            val nickname = userBean.nickname
-            if (nickname != null) {
-                userSessionManager
-                    .saveUserProfile(
-                        UserProfileImpl(
-                            userId,
-                            nickname,
-                            username,
-                            userBean.gender,
-                            userBean.headPortrait,
-                            userBean.bio,
-                            userBean.birthday,
-                            userBean.isEmailVerified,
-                            userBean.isMobilePhoneVerified,
-                            userBean.createdAt,
-                            userBean.updatedAt
-                        )
+
+            userSessionManager
+                .saveUserProfile(
+                    UserProfileImpl(
+                        userId,
+                        username,
+                        userBean.nickname,
+                        userBean.gender,
+                        userBean.headPortrait,
+                        userBean.bio,
+                        userBean.birthday,
+                        userBean.isEmailVerified,
+                        userBean.isMobilePhoneVerified,
+                        userBean.createdAt,
+                        userBean.updatedAt
                     )
-            }
+                )
+
         }
 
     }

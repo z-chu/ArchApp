@@ -4,8 +4,8 @@ import java.util.*
 
 data class UserProfileImpl(
     override val userId: String,
-    override val nickname: String,
     override val username: String,
+    override val nickname: String?,
     override var gender: Int = 0,
     override var headPortrait: String? = null,
     override var bio: String? = null,
@@ -20,8 +20,8 @@ data class UserProfileImpl(
 internal fun UserProfile.getSimpleImpl(): UserProfileImpl {
     return UserProfileImpl(
         userId,
-        nickname,
         username,
+        nickname,
         gender,
         headPortrait,
         bio,
