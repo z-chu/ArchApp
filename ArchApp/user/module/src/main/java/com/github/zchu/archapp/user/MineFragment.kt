@@ -1,5 +1,6 @@
 package com.github.zchu.archapp.user
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
@@ -53,6 +54,10 @@ class MineFragment : BaseFragment() {
         tvActionEdit = view.findViewById(R.id.tv_action_edit)
         ivUserArrow = view.findViewById(R.id.iv_user_arrow)
         swNightMode = view.findViewById(R.id.sw_night_mode)
+
+        view.findViewById<View>(R.id.mine_app_setting).setOnClickListener {
+            startActivity(Intent(requireContext(), SettingActivity::class.java))
+        }
 
     }
 

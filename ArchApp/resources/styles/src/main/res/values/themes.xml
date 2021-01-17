@@ -1,7 +1,7 @@
 <resources xmlns:ns2="http://schemas.android.com/apk/res-auto">
 
-    <style name="Theme.Saltoken" parent="Base.Theme.Saltoken.Light">
-        <item name="toolbarStyle">@style/Widget.Saltoken.Toolbar.Surface</item>
+    <style name="Theme.Saltoken" parent="Base.Theme.Saltoken">
+        <item name="toolbarStyle">@style/Widget.Saltoken.Toolbar.Primary</item>
     </style>
 
     <style name="Theme.Saltoken.TranslucentStatus">

@@ -2,7 +2,7 @@ package com.github.zchu.archapp.login.di
 
 import com.github.zchu.archapp.login.service.LoginModuleCreator
 import com.google.auto.service.AutoService
-import com.saltoken.common.koin.KoinModuleProvider
+import com.saltoken.commonbase.koin.KoinModuleProvider
 import org.koin.core.module.Module
 import org.koin.dsl.module
 

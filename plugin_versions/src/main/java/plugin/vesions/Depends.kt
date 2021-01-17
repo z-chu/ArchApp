@@ -106,16 +106,19 @@ object Depends {
     const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
     const val coilKt = "io.coil-kt:coil:${Versions.coilKt}"
     const val gson = "com.google.code.gson:gson:2.8.6"
-
+    const val autoService =
+        "com.google.auto.service:auto-service-annotations:${Versions.autoService}"
+    const val autoServiceApt = "com.google.auto.service:auto-service:${Versions.autoService}"
 
 }
 
 object Versions {
+    const val autoService = "1.0-rc6"
     const val retrofit = "2.9.0"
     const val okhttpLogging = "3.9.0"
     const val appcompat = "1.2.0"
     const val coreKtx = "1.3.2"
-    const val material = "1.2.1"
+    const val material = "1.3.0-rc01"
     const val constraintlayout = "2.0.4"
     const val navigation = "2.3.2"
     const val paging = "3.0.0-alpha01"

@@ -1,4 +1,4 @@
-package com.saltoken.common.koin
+package com.saltoken.commonbase.koin
 
 import org.koin.core.module.Module
 

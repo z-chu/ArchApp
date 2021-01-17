@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/abc_toolbar_layout" />
+
+    <TextView
+        android:id="@+id/action_logout"
+        android:layout_width="match_parent"
+        android:text="退出登录"
+        android:textColor="?colorSell"
+        android:background="@drawable/bg_list_item"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:layout_height="48dp" />
+
+</LinearLayout>

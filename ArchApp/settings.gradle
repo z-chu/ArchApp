@@ -16,3 +16,4 @@ include ':common_base'
 include ':resources:languages'
 include ':resources:styles'
 rootProject.name = "ArchApp"
+include ':module_service_mock_kit'

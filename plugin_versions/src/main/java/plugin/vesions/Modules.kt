@@ -6,6 +6,8 @@ object Modules {
     const val common = ":common"
     const val commonBase = ":common_base"
     const val userSession = ":user_session"
+    const val moduleServiceMockKit = ":module_service_mock_kit"
+    const val moduleService = ":module_service"
 
     object User {
         const val module = ":user:module"

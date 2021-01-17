@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="148dp"
+    android:layout_height="128dp"
     android:background="@color/colorPrimary"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin">
@@ -15,7 +15,7 @@
         android:layout_marginTop="24dp"
         android:text="未登录"
         android:textColor="?android:textColorPrimaryInverse"
-        android:textSize="@dimen/text_size_headline"
+        android:textSize="@dimen/text_size_body_2"
         tools:visibility="gone" />
 
     <TextView
@@ -23,28 +23,31 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tv_login_flag"
-        android:layout_marginTop="10dp"
-        android:text="登录更安全,可以同步书籍,多设备切换"
+        android:layout_marginTop="8dp"
+        android:text="登录一下，测试一下！"
+        android:textSize="@dimen/text_size_caption"
         android:textColor="?android:textColorSecondaryInverse"
         tools:visibility="gone" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/tv_action_login"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_below="@id/tv_login_hint"
         android:layout_marginTop="12.0dp"
         android:gravity="center"
-        android:paddingBottom="6dp"
+        android:paddingBottom="0dp"
         android:paddingLeft="12dp"
         android:paddingRight="12dp"
-        android:paddingTop="6dp"
+        android:paddingTop="0dp"
         app:backgroundTint="@color/colorSurface"
         android:text="点击登录"
         android:textSize="12sp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
         app:cornerRadius="50dp"
         android:textColor="?colorSecondary"
-        tools:visibility="gone" />
+        tools:visibility="visible" />
 
     <RelativeLayout
         android:id="@+id/rl_user"
@@ -90,14 +93,14 @@
                 android:maxLines="1"
                 android:text="不开车的擎天柱"
                 android:textColor="?android:textColorSecondaryInverse"
-                android:textSize="@dimen/text_size_headline"
+                android:textSize="@dimen/text_size_body_2"
                 android:visibility="gone"
                 tools:visibility="visible" />
 
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="8dp" />
+                android:layout_height="6dp" />
 
             <TextView
                 android:id="@+id/tv_action_edit"
@@ -110,6 +113,7 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:text="所有的伟大，都源于一个勇敢的开始。"
+                android:textSize="@dimen/text_size_caption"
                 android:textColor="?android:textColorSecondaryInverse"
                 android:visibility="gone"
                 tools:visibility="visible" />

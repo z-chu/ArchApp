@@ -28,4 +28,8 @@ dependencies {
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat
     implementation Depends.AndroidX.material
+
+    implementation Depends.AndroidX.lifecycleExtensions
+    implementation Depends.AndroidX.lifecycleRuntime
+    implementation Depends.AndroidX.lifecycleRuntimeKtx
 }

@@ -3,21 +3,20 @@ package com.github.zchu.archapp.di
 import android.content.Context
 import com.github.zchu.archapp.BuildConfig
 import com.github.zchu.archapp.login.service.LoginModuleCreator
-import com.github.zchu.archapp.usersession.di.userSessionModule
-import com.saltoken.common.koin.KoinModuleProvider
+import com.saltoken.commonbase.koin.KoinModuleProvider
 import com.saltoken.commonbase.koin.isDebug
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.core.context.startKoin
 import org.koin.core.module.Module
+import timber.log.Timber
 import java.util.*
 import kotlin.collections.ArrayList
 
 object AppKoinStarter {
 
     private val modules = listOf(
-        appModule,
-        userSessionModule
+        appModule
     )
 
     private val properties = mapOf(
@@ -51,6 +50,7 @@ object AppKoinStarter {
         moduleProviders.iterator().forEach {
             modules.addAll(it.modules())
         }
+        Timber.d("AutoRegisterModules:$modules")
         return modules
     }
 }

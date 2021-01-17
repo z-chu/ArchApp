@@ -1,4 +1,4 @@
-package com.github.zchu.archapp.model;
+package com.saltoken.common.model;
 
 /**
  * author : zchu

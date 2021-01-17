@@ -3,6 +3,7 @@ import plugin.vesions.*
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 apply from: '../android_common.gradle'
@@ -25,5 +26,13 @@ dependencies {
     implementation Depends.Koin.core
     implementation Depends.Koin.android
     implementation Depends.gson
+
+    // auto-service
+    implementation Depends.autoService
+    annotationProcessor Depends.autoServiceApt
+    kapt  Depends.autoServiceApt
+
+
+    implementation project(Modules.commonBase)
 
 }

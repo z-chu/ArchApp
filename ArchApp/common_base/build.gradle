@@ -43,7 +43,11 @@ dependencies {
     api Depends.Rx.rxjava
     api Depends.Rx.rxAndroid
     api Depends.Rx.rxkotlin
-    implementation "com.github.z-chu:ReactiveNetwork:v4.0.0-rx3"
+    api "com.github.z-chu:ReactiveNetwork:v4.0.0-rx3"
+
+    //okhttp
+    api Depends.OkHttp.okhttp
+    api Depends.OkHttp.okio
 
     //glide
     api Depends.Glide.glide

@@ -2,8 +2,11 @@ package com.saltoken.common.extensions
 
 import android.content.Context
 import android.net.ParseException
+import android.text.TextUtils
+import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.saltoken.common.R
+import com.saltoken.common.model.LCErrorBody
 import okhttp3.internal.http2.ErrorCode
 import okhttp3.internal.http2.StreamResetException
 import org.json.JSONException
@@ -27,10 +30,22 @@ fun Throwable?.getEasyMessage(
         context.getString(R.string.exception_connect)
     } else if (this is retrofit2.HttpException) {
         val response = this.response()
-        if (response?.code() == 502) {
+        val responseBody = response!!.errorBody()
+        if (responseBody != null) {
+            try {
+                val errorBody: LCErrorBody =
+                    Gson().fromJson(responseBody.string(), LCErrorBody::class.java)
+                if (!TextUtils.isEmpty(errorBody.error)) {
+                    return errorBody.error
+                }
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        if (response.code() == 502) {
             return context.getString(R.string.error_http_code_502)
         }
-        context.getString(R.string.error_server)
+        this.message ?: context.getString(R.string.error_server)
     } else if (this is UnknownHostException) {
         context.getString(R.string.exception_unknown_host)
     } else if (this is SecurityException) {

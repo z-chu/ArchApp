@@ -15,10 +15,10 @@ import com.github.zchu.archapp.login.anim.WaveHelper
 import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.service.SignInActivityStarter
 import com.github.zchu.archapp.login.viewmodel.LoginViewModel
-import com.github.zchu.common.help.showToastLong
 import com.github.zchu.common.help.showToastShort
 import com.rengwuxian.materialedittext.MaterialEditText
 import com.saltoken.common.base.BaseActivity
+import com.saltoken.common.extensions.getEasyMessage
 import com.saltoken.commonbase.models.observeWork
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.lang.ref.WeakReference
@@ -49,11 +49,10 @@ class SignInActivity : BaseActivity() {
                     showLoading()
                 },
                 onSuccess = {
-                    showToastLong("登录成功：$it")
                     showSuccess(it)
                 },
                 onError = {
-                    showError(it.message)
+                    showError(it.getEasyMessage(this))
                 }
             )
     }

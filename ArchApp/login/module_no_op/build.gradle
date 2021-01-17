@@ -34,9 +34,10 @@ android {
 dependencies {
     implementation project(Modules.Login.moduleService)
     implementation project(Modules.common)
+    implementation project(Modules.moduleServiceMockKit)
 
     // auto-service
-    api 'com.google.auto.service:auto-service-annotations:1.0-rc6'
-    annotationProcessor 'com.google.auto.service:auto-service:1.0-rc6'
-    kapt 'com.google.auto.service:auto-service:1.0-rc6'
+    implementation Depends.autoService
+    annotationProcessor Depends.autoServiceApt
+    kapt  Depends.autoServiceApt
 }
