@@ -11,6 +11,8 @@ object Modules {
 
     object User {
         const val module = ":user:module"
+        const val moduleNoOp = ":user:module_no_op"
+        const val moduleService = ":user:module_service"
     }
 
     object Login {

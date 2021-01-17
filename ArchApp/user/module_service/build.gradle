@@ -1,0 +1,13 @@
+import plugin.vesions.*
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+}
+
+apply from: '../../android_common.gradle'
+
+
+
+dependencies {
+    implementation Depends.Fragment.runtime
+}

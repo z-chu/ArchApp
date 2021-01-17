@@ -1,4 +1,5 @@
 include ':user:module'
+include ':user:module_no_op'
 include ':login:module_no_op'
 include ':login:module_service'
 include ':login:launch'
@@ -17,3 +18,4 @@ include ':resources:languages'
 include ':resources:styles'
 rootProject.name = "ArchApp"
 include ':module_service_mock_kit'
+include ':user:module_service'

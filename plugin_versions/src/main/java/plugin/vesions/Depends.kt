@@ -130,7 +130,7 @@ object Versions {
     const val room = "2.3.0-alpha01"
     const val cardview = "1.0.0"
     const val recyclerview = "1.0.0"
-    const val fragment = "1.3.0-alpha06"
+    const val fragment = "1.2.5"
     const val swiperefreshlayout = "1.0.0"
     const val junit = "4.12"
     const val junitExt = "1.1.1"

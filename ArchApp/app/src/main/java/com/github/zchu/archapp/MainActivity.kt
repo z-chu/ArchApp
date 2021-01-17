@@ -2,24 +2,42 @@ package com.github.zchu.archapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
-import androidx.navigation.ui.setupWithNavController
-import com.github.zchu.archapp.login.service.LoginModuleCreator
+import com.github.zchu.archapp.ui.dashboard.DashboardFragment
+import com.github.zchu.archapp.ui.home.HomeFragment
+import com.github.zchu.archapp.user.moduleservice.MineFragmentCreator
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import timber.log.Timber
-import java.util.*
+import com.saltoken.commonbase.fragment.FragmentTabController
+import com.saltoken.commonbase.fragment.setupWithFragmentTabController
+import org.koin.android.ext.android.getKoin
 
 class MainActivity : AppCompatActivity() {
 
+
+    private lateinit var fragmentTabController: FragmentTabController
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
-        val navController = findNavController(R.id.nav_host_fragment)
-        navView.setupWithNavController(navController)
-        val loginModuleCreators = ServiceLoader.load(LoginModuleCreator::class.java)
-        loginModuleCreators.forEach {
-            Timber.d(it.toString())
+        fragmentTabController = navView.setupWithFragmentTabController(
+            R.id.fragment_container_view,
+            supportFragmentManager,
+            savedInstanceState,
+            R.id.navigation_home
+        ) {
+            when (it) {
+                R.id.navigation_home -> HomeFragment()
+                R.id.navigation_dashboard -> DashboardFragment()
+                R.id.navigation_notifications -> {
+                    getKoin().get<MineFragmentCreator>()
+                        .createMineFragment("测试参数")
+                }
+                else -> throw IllegalArgumentException()
+            }
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        fragmentTabController.saveInstanceState(outState)
     }
 }

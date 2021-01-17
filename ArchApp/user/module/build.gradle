@@ -3,6 +3,7 @@ import plugin.vesions.*
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 
 
@@ -24,6 +25,7 @@ dependencies {
     implementation project(Modules.commonBase)
     implementation project(Modules.userSession)
     implementation project(Modules.Login.moduleService)
+    implementation project(Modules.User.moduleService)
 
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat
@@ -32,4 +34,10 @@ dependencies {
     implementation Depends.AndroidX.lifecycleExtensions
     implementation Depends.AndroidX.lifecycleRuntime
     implementation Depends.AndroidX.lifecycleRuntimeKtx
+
+    // auto-service
+    implementation Depends.autoService
+    annotationProcessor Depends.autoServiceApt
+    kapt  Depends.autoServiceApt
+
 }

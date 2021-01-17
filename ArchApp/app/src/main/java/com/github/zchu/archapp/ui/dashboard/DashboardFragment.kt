@@ -7,25 +7,38 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import com.github.zchu.archapp.R
+import com.github.zchu.archapp.login.service.SignInActivityStarter
+import com.github.zchu.archapp.usersession.UserSessionManager
+import org.koin.android.ext.android.inject
 
 class DashboardFragment : Fragment() {
 
-    private lateinit var dashboardViewModel: DashboardViewModel
+    private val userSessionManager: UserSessionManager by inject()
+    private val signInActivityStarter: SignInActivityStarter by inject()
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
-        dashboardViewModel =
-                ViewModelProvider(this).get(DashboardViewModel::class.java)
+
         val root = inflater.inflate(R.layout.fragment_dashboard, container, false)
         val textView: TextView = root.findViewById(R.id.text_dashboard)
-        dashboardViewModel.text.observe(viewLifecycleOwner, Observer {
-            textView.text = it
-        })
+        userSessionManager
+            .liveSession
+            .observe(viewLifecycleOwner, Observer {
+                if (it == null) {
+                    textView.text = "去登录"
+                } else {
+                    textView.text = "已登录，不要点"
+                }
+            })
+        textView.setOnClickListener {
+            if (!userSessionManager.isLoggedIn()) {
+                signInActivityStarter.start(requireContext())
+            }
+        }
         return root
     }
 }

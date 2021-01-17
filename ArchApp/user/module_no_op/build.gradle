@@ -10,7 +10,7 @@ apply from: '../../android_common.gradle'
 
 
 dependencies {
-    implementation project(Modules.Login.moduleService)
+    implementation project(Modules.User.moduleService)
     implementation project(Modules.common)
     implementation project(Modules.moduleServiceMockKit)
 

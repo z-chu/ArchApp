@@ -35,6 +35,8 @@ android {
         exclude 'META-INF/atomicfu.kotlin_module'
         exclude 'META-INF/common_release.kotlin_module'
         exclude 'META-INF/module_debug.kotlin_module'
+        exclude 'META-INF/module_no_op_debug.kotlin_module'
+        exclude 'META-INF/module_service_debug.kotlin_module'
     }
 
 }
@@ -50,9 +52,9 @@ dependencies {
 
     implementation project(Modules.Login.module)
     implementation project(Modules.Login.moduleService)
-    implementation project(Modules.Login.moduleService)
 
     implementation project(Modules.User.module)
+    implementation project(Modules.User.moduleService)
 
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat
