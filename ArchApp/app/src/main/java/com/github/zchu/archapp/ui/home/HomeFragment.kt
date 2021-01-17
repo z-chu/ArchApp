@@ -23,7 +23,7 @@ class HomeFragment : Fragment() {
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
         val textView: TextView = root.findViewById(R.id.text_home)
-        userSessionManager.liveSession.observe(viewLifecycleOwner, Observer {
+        userSessionManager.liveUserProfile.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 textView.text = it.toString()
             }

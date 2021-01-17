@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView
     android:id="@+id/card_content"
-    android:layout_width="270dp"
+    android:layout_width="286dp"
     android:layout_height="wrap_content"
     android:layout_gravity="center"
     app:cardCornerRadius="6dp"

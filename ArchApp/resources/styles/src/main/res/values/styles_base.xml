@@ -13,12 +13,11 @@
         <item name="android:background">?dividerHorizontal</item>
     </style>
 
-    <style name="Widget.Saltoken.Toolbar.Primary" parent="Widget.MaterialComponents.Toolbar.Primary">
+    <style name="Widget.Saltoken.Toolbar.Primary" parent="Widget.MaterialComponents.Toolbar.PrimarySurface">
         <item name="contentInsetStartWithNavigation">0dp</item>
         <item name="android:textColorSecondary">@color/textColorSecondaryInverse</item>
         <item name="android:textColorPrimary">@color/textColorPrimaryInverse</item>
-        <item name="android:theme">@style/ThemeOverlay.Saltoken.Toolbar.Primary</item>
-        <item name="theme">@style/ThemeOverlay.Saltoken.Toolbar.Primary</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Saltoken.Toolbar.Primary</item>
         <item name="titleTextColor">@color/textColorPrimaryInverse</item>
         <item name="subtitleTextColor">@color/textColorSecondaryInverse</item>
         <item name="colorControlNormal">@color/colorOnPrimary</item>
@@ -30,6 +29,7 @@
         <item name="contentInsetStartWithNavigation">0dp</item>
         <item name="android:textColorSecondary">@color/textColorSecondary</item>
         <item name="android:textColorPrimary">@color/textColorPrimary</item>
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Saltoken.Toolbar.Surface</item>
         <item name="android:theme">@style/ThemeOverlay.Saltoken.Toolbar.Surface</item>
         <item name="theme">@style/ThemeOverlay.Saltoken.Toolbar.Surface</item>
         <item name="titleTextColor">@color/textColorPrimary</item>
@@ -58,7 +58,6 @@
 
     <style name="ThemeOverlay.Saltoken.Toolbar.Primary" parent="">
         <item name="colorControlNormal">@color/colorOnPrimary</item>
-        <item name="android:colorControlNormal">@color/colorOnPrimary</item>
         <item name="actionMenuTextColor">@color/colorOnPrimary</item>
     </style>
 
