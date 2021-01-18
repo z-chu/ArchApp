@@ -2,6 +2,8 @@ package com.github.zchu.archapp.login.launch
 
 import android.content.Context
 import com.github.zchu.archapp.login.service.LoginModuleCreator
+import com.github.zchu.archapp.moduleservice.MainActivityStarter
+import com.github.zchu.archapp.moduleservice.mockkit.mockActivityIntent
 import com.saltoken.commonbase.concurrent.AppSchedulers
 import com.saltoken.commonbase.koin.installAutoRegister
 import com.saltoken.commonbase.koin.isDebug
@@ -16,6 +18,15 @@ object LoginKoinStarter {
     private val modules = listOf(
         module {
             single { AppSchedulers(AndroidSchedulers.mainThread(), Schedulers.io()) }
+
+            single<MainActivityStarter> {
+                object : MainActivityStarter {
+                    override fun start(context: Context) {
+                        context.startActivity(mockActivityIntent(context, "MainActivityStarter"))
+                    }
+
+                }
+            }
         }
     )
 

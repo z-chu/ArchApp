@@ -35,6 +35,7 @@ dependencies {
     implementation project(Modules.Resources.languages)
     implementation project(Modules.Resources.styles)
 
+    implementation project(Modules.moduleService)
     implementation project(Modules.Login.moduleService)
 
     implementation Depends.Retrofit.retrofit

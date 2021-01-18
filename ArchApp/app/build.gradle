@@ -45,7 +45,7 @@ android {
         production {
             dimension "default"
         }
-        
+
         development {
             dimension "default"
         }
@@ -61,6 +61,7 @@ dependencies {
     implementation project(Modules.commonBase)
     implementation project(Modules.common)
     implementation project(Modules.userSession)
+    implementation project(Modules.moduleService)
     implementation project(Modules.Resources.languages)
     implementation project(Modules.Resources.styles)
     implementation project(Modules.Data.model)

@@ -15,11 +15,13 @@ import com.github.zchu.archapp.login.anim.WaveHelper
 import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.service.SignInActivityStarter
 import com.github.zchu.archapp.login.viewmodel.LoginViewModel
+import com.github.zchu.archapp.moduleservice.MainActivityStarter
 import com.github.zchu.common.help.showToastShort
 import com.rengwuxian.materialedittext.MaterialEditText
 import com.saltoken.common.base.BaseActivity
 import com.saltoken.common.extensions.getEasyMessage
 import com.saltoken.commonbase.models.observeWork
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.lang.ref.WeakReference
 
@@ -34,6 +36,8 @@ class SignInActivity : BaseActivity() {
     private lateinit var mWaveHelper: WaveHelper
 
     private lateinit var dialog: Dialog
+
+    private val mainActivityStarter: MainActivityStarter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -120,6 +124,7 @@ class SignInActivity : BaseActivity() {
         etPassword.isEnabled = true
         btnSignIn.progress = 100
         dialog.setOnDismissListener {
+            mainActivityStarter.start(this)
             finish()
             overridePendingTransition(0, R.anim.zoom_out)
         }

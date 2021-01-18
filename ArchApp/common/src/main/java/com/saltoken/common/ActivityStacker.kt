@@ -97,6 +97,17 @@ object ActivityStacker {
         }
     }
 
+    fun <T : Activity> findActivity(cls: Class<T>): Activity? {
+        val iterator = activityStack.iterator()
+        while (iterator.hasNext()) {
+            val activity = iterator.next()
+            if (activity.javaClass == cls) {
+                return activity
+            }
+        }
+        return null
+    }
+
     /**
      * 结束指定类名的所有Activity
      */
