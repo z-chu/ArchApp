@@ -1,4 +1,4 @@
-package com.saltoken.common.remote
+ package com.saltoken.common.remote
 
 import android.content.Context
 import com.saltoken.commonbase.network.NullOnEmptyConverterFactory
