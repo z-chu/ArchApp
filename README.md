@@ -1,6 +1,6 @@
 # ArchApp
 
-# 组件化解决方案 （这篇作文还在写,以下是草稿...）
+# 组件化解决方案 （这篇作文还在写,以下是草稿...,先看代码吧）
 
 
 
@@ -82,6 +82,6 @@
 
  * [回归初心：极简 Android 组件化方案 — AppJoint](https://juejin.im/post/6844903687488274445)
  * [【译】迁移被废弃的Kotlin Android Extensions插件](https://weilu.blog.csdn.net/article/details/109557820)
- * [组件化之AutoService使用与源码解析] (https://www.jianshu.com/p/086fe09188ea)
+ * [组件化之AutoService使用与源码解析](https://www.jianshu.com/p/086fe09188ea)
 
  
