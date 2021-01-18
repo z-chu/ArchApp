@@ -2,6 +2,7 @@ package com.saltoken.common
 
 import android.content.Context
 import androidx.annotation.CallSuper
+import com.github.zchu.common.help.ToastDef
 import com.saltoken.commonbase.CommonBase
 
 open class AppBaseContext : BaseFeatureApplication() {
@@ -15,6 +16,7 @@ open class AppBaseContext : BaseFeatureApplication() {
     override fun onCreate() {
         super.onCreate()
         CommonBase.init(this)
+        ToastDef.defaultContext = this
     }
 
 

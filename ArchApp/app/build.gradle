@@ -39,6 +39,21 @@ android {
         exclude 'META-INF/module_service_debug.kotlin_module'
     }
 
+    flavorDimensions 'default'
+    productFlavors {
+
+        production {
+            dimension "default"
+        }
+        
+        development {
+            dimension "default"
+        }
+
+
+
+
+    }
 }
 
 dependencies {
@@ -50,10 +65,13 @@ dependencies {
     implementation project(Modules.Resources.styles)
     implementation project(Modules.Data.model)
 
-    implementation project(Modules.Login.module)
+
+    developmentImplementation project(Modules.Login.moduleNoOp)
+    productionImplementation project(Modules.Login.module)
     implementation project(Modules.Login.moduleService)
 
-    implementation project(Modules.User.module)
+    developmentImplementation project(Modules.User.moduleNoOp)
+    productionImplementation project(Modules.User.module)
     implementation project(Modules.User.moduleService)
 
     implementation Depends.AndroidX.coreKtx
@@ -79,8 +97,7 @@ dependencies {
     // auto-service
     implementation Depends.autoService
     annotationProcessor Depends.autoServiceApt
-    kapt  Depends.autoServiceApt
-
+    kapt Depends.autoServiceApt
 
 
 }

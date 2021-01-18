@@ -2,6 +2,7 @@ package com.github.zchu.archapp.login.di
 
 import com.github.zchu.archapp.login.SignInActivity
 import com.github.zchu.archapp.login.data.LoginDataSource
+import com.github.zchu.archapp.login.data.LoginRepository
 import com.github.zchu.archapp.login.data.LoginService
 import com.github.zchu.archapp.login.service.LoginModuleCreator
 import com.github.zchu.archapp.login.service.SignInActivityStarter
@@ -38,6 +39,10 @@ internal class LoginModuleCreatorImpl : LoginModuleCreator {
 
             single {
                 LoginDataSource(get())
+            }
+
+            single {
+                LoginRepository(get())
             }
 
             viewModel {

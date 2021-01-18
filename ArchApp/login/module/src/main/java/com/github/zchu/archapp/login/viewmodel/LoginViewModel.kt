@@ -2,7 +2,7 @@ package com.github.zchu.archapp.login.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
-import com.github.zchu.archapp.login.data.LoginDataSource
+import com.github.zchu.archapp.login.data.LoginRepository
 import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.usecase.SaveSessionUseCase
 import com.github.zchu.bridge._subscribe
@@ -17,7 +17,7 @@ import com.saltoken.commonbase.models.bindCanceler
 import com.saltoken.commonbase.rx.applySchedulers
 
 class LoginViewModel(
-    private val loginDataSource: LoginDataSource,
+    private val loginRepository: LoginRepository,
     private val appSchedulers: AppSchedulers,
     private val saveSessionUseCase: SaveSessionUseCase
 ) : RxViewModel() {
@@ -28,7 +28,7 @@ class LoginViewModel(
         get() = _loginResult
 
     fun loginOrRegister(username: String, password: String) {
-        loginDataSource
+        loginRepository
             .loginOrRegister(username, password)
             .applySchedulers(appSchedulers)
             ._subscribe {
