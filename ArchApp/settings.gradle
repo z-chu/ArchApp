@@ -9,6 +9,7 @@ include ':user_session'
 include ':data:repository'
 include ':data:remote'
 include ':data:model'
+include ':data:local'
 include ':module_service'
 includeBuild("../plugin_versions")
 include ':app'
