@@ -16,6 +16,7 @@ open class AppBaseContext : BaseFeatureApplication() {
     override fun onCreate() {
         super.onCreate()
         CommonBase.init(this)
+        ActivityStacker.init(this)
         ToastDef.defaultContext = this
     }
 
