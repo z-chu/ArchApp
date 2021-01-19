@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
         override fun start(context: Context) {
             val mainActivity = ActivityStacker.findActivity(MainActivity::class.java)
             if (mainActivity != null) {
-                mainActivity.finish()
+                ActivityStacker.finishOtherActivity(MainActivity::class.java)
             } else {
                 context.startActivity(Intent(context, MainActivity::class.java))
             }
