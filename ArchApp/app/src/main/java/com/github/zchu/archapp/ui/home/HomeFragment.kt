@@ -16,9 +16,9 @@ class HomeFragment : Fragment() {
     private val userSessionManager: UserSessionManager by inject()
 
     override fun onCreateView(
-            inflater: LayoutInflater,
-            container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
 
         val root = inflater.inflate(R.layout.fragment_home, container, false)
@@ -26,6 +26,8 @@ class HomeFragment : Fragment() {
         userSessionManager.liveUserProfile.observe(viewLifecycleOwner, Observer {
             if (it != null) {
                 textView.text = it.toString()
+            } else {
+                textView.text = "首页"
             }
         })
         return root
