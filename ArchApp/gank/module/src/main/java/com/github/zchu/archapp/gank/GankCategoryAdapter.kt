@@ -3,7 +3,6 @@ package com.github.zchu.archapp.gank
 import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.github.zchu.archapp.gakn.R
 import com.github.zchu.archapp.gank.data.bean.CategoryResult
 import com.saltoken.common.adapter.CommonAdapter
 import com.saltoken.common.adapter.CommonViewHolder

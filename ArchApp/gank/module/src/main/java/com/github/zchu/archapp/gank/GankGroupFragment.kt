@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.github.zchu.archapp.gakn.R
 import com.github.zchu.common.help.BaseFragmentAdapter
 import com.google.android.material.tabs.TabLayout
 import com.saltoken.common.base.BaseFragment
@@ -34,7 +33,6 @@ class GankGroupFragment : BaseFragment() {
         }
         adapter.fragments = fragments.requireNoNulls()
         viewPager.adapter = adapter
-        //viewPager.adapter = GankFragmentAdapter(childFragmentManager)
         tab.setupWithViewPager(viewPager)
     }
 

@@ -1,0 +1,47 @@
+import plugin.vesions.*
+
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+apply from: '../../android_common.gradle'
+apply from: '../../android_test_deps.gradle'
+
+android {
+
+    defaultConfig {
+        applicationId "com.github.zchu.archapp.login.launch"
+    }
+
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/atomicfu.kotlin_module'
+        exclude 'META-INF/common_release.kotlin_module'
+        exclude 'META-INF/module_debug.kotlin_module'
+        exclude 'META-INF/module_no_op_debug.kotlin_module'
+        exclude 'META-INF/module_service_debug.kotlin_module'
+    }
+
+}
+
+dependencies {
+
+
+    implementation project(Modules.commonBase)
+    implementation project(Modules.common)
+    implementation project(Modules.Gank.module)
+    implementation project(Modules.Gank.moduleService)
+    implementation project(Modules.moduleService)
+    implementation project(Modules.moduleServiceMockKit)
+
+
+    implementation Depends.AndroidX.coreKtx
+    implementation Depends.AndroidX.appcompat
+    implementation Depends.AndroidX.material
+    implementation Depends.AndroidX.constraintlayout
+    implementation Depends.AndroidX.lifecycleExtensions
+    implementation Depends.AndroidX.lifecycleRuntime
+    implementation Depends.AndroidX.lifecycleRuntimeKtx
+}

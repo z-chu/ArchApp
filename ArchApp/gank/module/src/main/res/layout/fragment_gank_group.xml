@@ -41,7 +41,7 @@
             app:tabMinWidth="60dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
-            android:background="@color/colorPrimary"
+            android:background="?colorPrimary"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="@color/white"
             app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"

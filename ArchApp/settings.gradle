@@ -1,4 +1,5 @@
 include ':gank:module'
+include ':gank:launch'
 include ':gank:module_no_op'
 include ':gank:module_service'
 include ':user:module'
