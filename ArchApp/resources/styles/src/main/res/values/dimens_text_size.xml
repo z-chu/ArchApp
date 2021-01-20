@@ -4,6 +4,7 @@
     <dimen name="text_size_body_1">14sp</dimen>
     <dimen name="text_size_body_2">16sp</dimen>
     <dimen name="text_size_body_3">18sp</dimen>
+    <dimen name="text_size_large">22.0sp</dimen>
     <dimen name="text_size_button">14sp</dimen>
     <dimen name="text_size_caption">12sp</dimen>
     <dimen name="text_size_display_1">34sp</dimen>

@@ -91,6 +91,7 @@ object Depends {
         const val rxjava = "io.reactivex.rxjava3:rxjava:${Versions.rxjava}"
         const val rxkotlin = "io.reactivex.rxjava3:rxkotlin:${Versions.rxkotlin}"
         const val rxAndroid = "io.reactivex.rxjava3:rxandroid:${Versions.rxAndroid}"
+        const val rxpermissions = "com.github.tbruyelle:rxpermissions:${Versions.rxpermissions}"
     }
 
     object Glide {
@@ -145,6 +146,7 @@ object Versions {
     const val rxkotlin = "3.0.0"
     const val rxAndroid = "3.0.0"
     const val glide = "4.11.0"
+    const val rxpermissions = "0.12"
 
 }
 

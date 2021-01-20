@@ -51,8 +51,12 @@ class LoginModuleInstaller : ModuleAutoInstallable() {
             LoginRepository(get())
         }
 
-        viewModel {
-            LoginViewModel(get(), get(), get())
+
+
+        scope<SignInActivity> { //限定符，只允许在SignInActivity中进行注入 ,防止其他人用我的代码
+            viewModel {
+                LoginViewModel(get(), get(), get())
+            }
         }
 
         factory {
@@ -62,6 +66,8 @@ class LoginModuleInstaller : ModuleAutoInstallable() {
         factory<SignInActivityStarter> {
             SignInActivity.Companion
         }
+
+
     }
 
 }

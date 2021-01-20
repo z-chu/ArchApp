@@ -16,7 +16,7 @@ import com.saltoken.commonbase.concurrent.AppSchedulers
 import com.saltoken.commonbase.models.bindCanceler
 import com.saltoken.commonbase.rx.applySchedulers
 
-class LoginViewModel(
+internal class LoginViewModel(
     private val loginRepository: LoginRepository,
     private val appSchedulers: AppSchedulers,
     private val saveSessionUseCase: SaveSessionUseCase
