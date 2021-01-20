@@ -1,6 +1,6 @@
 package com.github.zchu.archapp.login.usecase
 
-import com.github.zchu.archapp.login.data.bean.UserBean
+import com.github.zchu.archapp.model.user.UserBean
 import com.github.zchu.archapp.usersession.UserSessionManager
 import com.github.zchu.archapp.usersession.model.UserProfileImpl
 import com.github.zchu.archapp.usersession.model.UserSessionImpl

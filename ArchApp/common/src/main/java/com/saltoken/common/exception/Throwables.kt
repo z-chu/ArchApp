@@ -6,7 +6,7 @@ import android.text.TextUtils
 import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.saltoken.common.R
-import com.saltoken.common.model.LCErrorBody
+import com.saltoken.common.exception.LCError
 import okhttp3.internal.http2.ErrorCode
 import okhttp3.internal.http2.StreamResetException
 import org.json.JSONException
@@ -14,6 +14,7 @@ import java.io.IOException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
+
 
 
 fun Throwable?.getEasyMessage(
@@ -33,8 +34,8 @@ fun Throwable?.getEasyMessage(
         val responseBody = response!!.errorBody()
         if (responseBody != null) {
             try {
-                val errorBody: LCErrorBody =
-                    Gson().fromJson(responseBody.string(), LCErrorBody::class.java)
+                val errorBody: LCError =
+                    Gson().fromJson(responseBody.string(), LCError::class.java)
                 if (!TextUtils.isEmpty(errorBody.error)) {
                     return errorBody.error
                 }

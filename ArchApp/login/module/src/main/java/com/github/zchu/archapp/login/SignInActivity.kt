@@ -12,9 +12,9 @@ import androidx.annotation.MainThread
 import com.dd.processbutton.iml.ActionProcessButton
 import com.gelitenight.waveview.library.WaveView
 import com.github.zchu.archapp.login.anim.WaveHelper
-import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.service.SignInActivityStarter
 import com.github.zchu.archapp.login.viewmodel.LoginViewModel
+import com.github.zchu.archapp.model.user.UserBean
 import com.github.zchu.archapp.moduleservice.MainActivityStarter
 import com.github.zchu.common.help.showToastShort
 import com.rengwuxian.materialedittext.MaterialEditText

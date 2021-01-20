@@ -1,4 +1,4 @@
-package com.saltoken.common.model;
+package com.saltoken.common.exception;
 
 /**
  * author : zchu

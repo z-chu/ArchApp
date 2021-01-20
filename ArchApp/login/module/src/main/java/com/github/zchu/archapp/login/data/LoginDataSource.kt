@@ -1,7 +1,7 @@
 package com.github.zchu.archapp.login.data
 
-import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.data.bean.UserBody
+import com.github.zchu.archapp.model.user.UserBean
 import com.google.gson.Gson
 import io.reactivex.rxjava3.core.Observable
 

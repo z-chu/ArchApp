@@ -1,4 +1,4 @@
-package com.saltoken.common.model;
+package com.github.zchu.archapp.model;
 
 import java.io.Serializable;
 import java.util.Date;

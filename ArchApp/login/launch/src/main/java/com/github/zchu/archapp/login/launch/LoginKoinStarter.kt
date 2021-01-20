@@ -1,9 +1,10 @@
 package com.github.zchu.archapp.login.launch
 
 import android.content.Context
-import com.github.zchu.archapp.login.service.LoginModuleCreator
 import com.github.zchu.archapp.moduleservice.MainActivityStarter
 import com.github.zchu.archapp.moduleservice.mockkit.mockActivityIntent
+import com.saltoken.common.koin.LeanCloudConfig
+import com.saltoken.common.koin.leanCloud
 import com.saltoken.commonbase.concurrent.AppSchedulers
 import com.saltoken.commonbase.koin.installAutoRegister
 import com.saltoken.commonbase.koin.isDebug
@@ -37,16 +38,16 @@ object LoginKoinStarter {
     fun start(context: Context) {
         startKoin {
             isDebug(true)
-            androidContext(context)
-            modules(modules)
-            installAutoRegister()
-            modules(
-                koin.get<LoginModuleCreator>().loginModule(
+            leanCloud(
+                LeanCloudConfig(
                     "https://fn78orw2.api.lncld.net/1.1/",
                     "fn78orw2hVO4V4d5n8VBypj7-gzGzoHsz",
                     "eGNJCnxUVelIBTo14A1SQkdr"
                 )
             )
+            androidContext(context)
+            modules(modules)
+            installAutoRegister()
             properties(properties)
         }
     }

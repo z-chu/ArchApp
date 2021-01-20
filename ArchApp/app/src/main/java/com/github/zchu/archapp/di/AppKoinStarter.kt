@@ -2,7 +2,8 @@ package com.github.zchu.archapp.di
 
 import android.content.Context
 import com.github.zchu.archapp.BuildConfig
-import com.github.zchu.archapp.login.service.LoginModuleCreator
+import com.saltoken.common.koin.LeanCloudConfig
+import com.saltoken.common.koin.leanCloud
 import com.saltoken.commonbase.koin.installAutoRegister
 import com.saltoken.commonbase.koin.isDebug
 import org.koin.android.ext.koin.androidContext
@@ -19,6 +20,13 @@ object AppKoinStarter {
     fun start(context: Context) {
         startKoin {
             isDebug(BuildConfig.DEBUG)
+            leanCloud(
+                LeanCloudConfig(
+                    BuildConfig.LEANCLOUD_SERVER_URL,
+                    BuildConfig.LEANCLOUD_APP_ID,
+                    BuildConfig.LEANCLOUD_APP_KEY
+                )
+            )
             androidContext(context)
             if (BuildConfig.DEBUG) {
                 androidLogger()
@@ -26,13 +34,6 @@ object AppKoinStarter {
             properties(properties)
             modules(appModule)
             installAutoRegister()
-            modules(
-                koin.get<LoginModuleCreator>().loginModule(
-                    BuildConfig.LEANCLOUD_SERVER_URL,
-                    BuildConfig.LEANCLOUD_APP_ID,
-                    BuildConfig.LEANCLOUD_APP_KEY
-                )
-            )
 
         }
     }

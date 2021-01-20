@@ -3,8 +3,8 @@ package com.github.zchu.archapp.login.viewmodel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.github.zchu.archapp.login.data.LoginRepository
-import com.github.zchu.archapp.login.data.bean.UserBean
 import com.github.zchu.archapp.login.usecase.SaveSessionUseCase
+import com.github.zchu.archapp.model.user.UserBean
 import com.github.zchu.bridge._subscribe
 import com.github.zchu.common.livedata.safeSetValue
 import com.github.zchu.common.rx.RxViewModel

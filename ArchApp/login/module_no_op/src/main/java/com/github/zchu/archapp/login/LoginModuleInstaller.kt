@@ -1,6 +1,6 @@
 package com.github.zchu.archapp.login
 
-import com.github.zchu.archapp.login.service.LoginModuleCreator
+import com.github.zchu.archapp.login.service.SignInActivityStarter
 import com.google.auto.service.AutoService
 import com.saltoken.commonbase.koin.KoinAutoInstallable
 import com.saltoken.commonbase.koin.ModuleAutoInstallable
@@ -13,8 +13,10 @@ import org.koin.dsl.module
 class LoginModuleInstaller : ModuleAutoInstallable() {
 
     override val module: Module = module {
-        factory<LoginModuleCreator> {
-            LoginModuleCreatorImpl()
+        module {
+            single<SignInActivityStarter> {
+                SignInActivityStarterImpl()
+            }
         }
     }
 

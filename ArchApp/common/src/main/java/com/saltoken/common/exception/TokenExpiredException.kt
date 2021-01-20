@@ -1,4 +1,4 @@
-package com.github.zchu.archapp.remotebase.exception
+package com.saltoken.common.exception
 
 /**
  * 登录状态过期异常
