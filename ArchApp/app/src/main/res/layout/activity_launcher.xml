@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/content_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/ll_welcome"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_smile"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            app:srcCompat="@drawable/ic_vector_smile" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_body_2"
+            tools:text="2017年11月3日,星期五" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="188dp"
+            android:text="遇见你,真美好"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_body_2" />
+
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/ll_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:orientation="vertical"
+        android:paddingLeft="16dp"
+        android:paddingTop="16dp"
+        android:paddingRight="16dp"
+        android:paddingBottom="16dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+
+        <TextView
+            android:id="@+id/tv_week_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?android:textColorPrimaryInverse"
+            android:textSize="@dimen/text_size_large"
+            tools:text="星期五" />
+
+        <TextView
+            android:id="@+id/tv_date_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_week_content"
+            android:layout_marginTop="6dp"
+            android:textColor="?android:textColorSecondaryInverse"
+            android:textSize="@dimen/text_size_body_2"
+            tools:text="2017年11月3日" />
+
+        <TextView
+            android:id="@+id/tv_text_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_date_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="40dp"
+            android:lineSpacingExtra="8dp"
+            android:textColor="?android:textColorPrimaryInverse"
+            android:textSize="@dimen/text_size_body_2"
+            tools:text="爱上一个人，便爱上一座城，\n城市再大，都觉得很小，\n小到自己的爱溢满全城。\n失去一个人，便失去一座城，\n城市再小，都觉得很大，\n大到任何一个地方都找不到自己。" />
+
+        <TextView
+            android:id="@+id/tv_from_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_text_content"
+            android:layout_marginTop="24dp"
+            android:textColor="?android:textColorPrimaryInverse"
+            android:textSize="@dimen/text_size_body_1"
+            tools:text="摘自  琢磨先生《以幽默的方式过一生》" />
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="28dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/app_name"
+            android:textColor="?android:textColorPrimaryInverse"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/tv_version_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:textColor="?android:textColorSecondaryInverse"
+            android:textSize="@dimen/text_size_micro"
+            tools:text="v1.0" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="16.0dp"
+        android:layout_marginBottom="20.0dp">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tv_skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="4dp"
+            android:gravity="center"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingLeft="12dp"
+            android:paddingTop="6dp"
+            android:paddingRight="12dp"
+            android:paddingBottom="6dp"
+            android:text="@string/format_skip"
+            android:textColor="?android:textColorPrimaryInverse"
+            android:textSize="@dimen/text_size_micro"
+            app:cornerRadius="50dp"
+            app:strokeColor="?android:textColorPrimaryInverse"
+            app:strokeWidth="1px" />
+    </FrameLayout>
+</RelativeLayout>

@@ -17,6 +17,7 @@ import java.net.UnknownHostException
 
 
 
+@JvmOverloads
 fun Throwable?.getEasyMessage(
     context: Context,
     defaultMessage: String = context.getString(R.string.exception_default)

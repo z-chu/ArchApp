@@ -81,6 +81,7 @@ dependencies {
     implementation Depends.AndroidX.recyclerview
     implementation Depends.AndroidX.material
     implementation Depends.AndroidX.constraintlayout
+    implementation Depends.Rx.rxpermissions
 
     //navigation
     implementation Depends.AndroidX.navigationFragment
