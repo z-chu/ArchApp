@@ -22,12 +22,19 @@ import com.saltoken.common.base.BaseActivity
 import com.saltoken.common.extensions.getEasyMessage
 import com.saltoken.commonbase.models.observeWork
 import org.koin.android.ext.android.inject
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.scope.activityScope
+import org.koin.androidx.viewmodel.ViewModelOwner
+import org.koin.androidx.viewmodel.scope.viewModel
 import java.lang.ref.WeakReference
 
 class SignInActivity : BaseActivity() {
 
-    private val loginViewModel: LoginViewModel by viewModel()
+    private val loginViewModel: LoginViewModel by activityScope().viewModel(owner = {
+        ViewModelOwner.from(
+            this,
+            this
+        )
+    })
 
 
     private lateinit var etUsername: MaterialEditText
