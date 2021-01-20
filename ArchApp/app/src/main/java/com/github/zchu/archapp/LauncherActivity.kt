@@ -30,7 +30,9 @@ import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.ObservableSource
 import io.reactivex.rxjava3.functions.Function
 import io.reactivex.rxjava3.kotlin.subscribeBy
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import org.koin.androidx.scope.activityScope
+import org.koin.androidx.viewmodel.ViewModelOwner
+import org.koin.androidx.viewmodel.scope.viewModel
 import timber.log.Timber
 import java.io.File
 import java.io.IOException
@@ -46,7 +48,13 @@ class LauncherActivity : BaseActivity() {
     private val rxPermissions: RxPermissions by lazy {
         RxPermissions(this)
     }
-    private val viewModel: LauncherViewModel by viewModel()
+
+    private val viewModel: LauncherViewModel by activityScope().viewModel(owner = {
+        ViewModelOwner.from(
+            this,
+            this
+        )
+    })
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

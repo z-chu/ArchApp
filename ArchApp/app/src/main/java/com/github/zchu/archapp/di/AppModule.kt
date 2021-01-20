@@ -1,5 +1,6 @@
 package com.github.zchu.archapp.di
 
+import com.github.zchu.archapp.LauncherActivity
 import com.github.zchu.archapp.MainActivity
 import com.github.zchu.archapp.data.WelcomeService
 import com.github.zchu.archapp.moduleservice.MainActivityStarter
@@ -42,7 +43,9 @@ val appModule = module {
         )
     }
 
-    viewModel { LauncherViewModel(get(), get()) }
+    scope<LauncherActivity> {//限定符，只允许在 LauncherActivity 中进行注入 ,防止其他人用我的代码
+        viewModel { LauncherViewModel(get(), get()) }
+    }
 
 
 }
