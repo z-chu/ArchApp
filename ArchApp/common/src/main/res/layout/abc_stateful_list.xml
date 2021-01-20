@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.github.zchu.stateful.StatefulView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/stateful_list"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:contentLayout="@layout/abc_layout_list"
+    app:errorLayout="@layout/view_error"
+    app:loadingLayout="@layout/view_loading"
+    app:retryViewId="@+id/retry_view"
+    app:loadingTextViewId="@+id/tv_loading_message"
+    app:errorTextViewId="@+id/tv_error_message" />

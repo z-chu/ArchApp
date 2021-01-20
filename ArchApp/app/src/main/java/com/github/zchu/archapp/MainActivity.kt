@@ -4,9 +4,9 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.github.zchu.archapp.gank.GankGroupFragment
 import com.github.zchu.archapp.moduleservice.MainActivityStarter
 import com.github.zchu.archapp.ui.dashboard.DashboardFragment
-import com.github.zchu.archapp.ui.home.HomeFragment
 import com.github.zchu.archapp.user.moduleservice.MineFragmentCreator
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.saltoken.common.ActivityStacker
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
             R.id.navigation_home
         ) {
             when (it) {
-                R.id.navigation_home -> HomeFragment()
+                R.id.navigation_home -> GankGroupFragment()
                 R.id.navigation_dashboard -> DashboardFragment()
                 R.id.navigation_notifications -> {
                     getKoin().get<MineFragmentCreator>()

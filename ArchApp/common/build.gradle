@@ -32,5 +32,6 @@ dependencies {
     implementation project(Modules.Resources.styles)
 
     api 'com.github.z-chu:StatefulView:1.0.8'
+    api Depends.AndroidX.swiperefreshlayout
 
 }

@@ -21,6 +21,14 @@ object Modules {
         const val moduleService = ":login:module_service"
     }
 
+
+    object Gank {
+        const val module = ":gank:module"
+        const val moduleNoOp = ":gank:module_no_op"
+        const val moduleService = ":gank:module_service"
+    }
+
+
     object Resources {
         const val languages = ":resources:languages"
         const val styles = ":resources:styles"

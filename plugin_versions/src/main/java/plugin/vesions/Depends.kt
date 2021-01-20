@@ -25,7 +25,7 @@ object Depends {
         const val swiperefreshlayout =
             "androidx.swiperefreshlayout:swiperefreshlayout:${Versions.swiperefreshlayout}"
         const val constraintlayout =
-            "androidx.constraintlayout:constraintlayout:${Versions.constraintlayout}"
+            "androidx.constraintlayout:constraintlayout:${Versions.coordinatorlayout}"
         const val lifecycleExtensions =
             "androidx.lifecycle:lifecycle-extensions:${Versions.lifecycle}"
         const val lifecycleRuntime =
@@ -46,6 +46,8 @@ object Depends {
         const val appStartup = "androidx.startup:startup-runtime:${Versions.appStartup}"
         const val datastorePreferences =
             "androidx.datastore:datastore-preferences:${Versions.DataStore}"
+        const val coordinatorlayout =
+            "androidx.coordinatorlayout:coordinatorlayout:${Versions.DataStore}"
 
     }
 
@@ -147,6 +149,7 @@ object Versions {
     const val rxAndroid = "3.0.0"
     const val glide = "4.11.0"
     const val rxpermissions = "0.12"
+    const val coordinatorlayout = "1.1.0"
 
 }
 

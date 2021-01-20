@@ -1,4 +1,4 @@
-package com.saltoken.common
+package com.saltoken.common.application
 
 import android.app.Application
 import android.content.ComponentCallbacks

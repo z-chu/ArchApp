@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="48dp">
+
+    <LinearLayout
+        android:id="@+id/loading_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true"
+        android:gravity="center">
+
+        <ProgressBar
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center"
+            android:indeterminate="true" />
+
+
+        <TextView
+            android:id="@+id/rv_with_footer_loading_load"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:textColor="?android:textColorTertiary"
+            android:text="加载中..."
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/load_more_load_complete_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="点击加载更多"
+        android:textColor="?android:textColorSecondary"
+        android:textSize="@dimen/text_size_body_1" />
+
+    <TextView
+        android:id="@+id/error_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="加载失败"
+        android:textColor="?android:textColorTertiary"
+        android:textSize="@dimen/text_size_body_1" />
+
+    <TextView
+        android:id="@+id/the_end_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="没有更多数据"
+        android:textColor="?android:textColorTertiary"
+        android:textSize="@dimen/text_size_body_1" />
+</FrameLayout>

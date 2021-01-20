@@ -29,5 +29,5 @@
     <color name="textColorPrimaryInverse">@color/white</color>
     <color name="textColorSecondaryInverse">@color/white_A87</color>
     <color name="textColorTertiaryInverse">@color/white_A60</color>
-    <color name="colorDivider">@color/md_grey_300</color>
+    <color name="colorDivider">@color/md_grey_100</color>
 </resources>

@@ -2,8 +2,10 @@ package com.github.zchu.archapp.di
 
 import com.github.zchu.archapp.LauncherActivity
 import com.github.zchu.archapp.MainActivity
+import com.github.zchu.archapp.WebActivity
 import com.github.zchu.archapp.data.WelcomeService
 import com.github.zchu.archapp.moduleservice.MainActivityStarter
+import com.github.zchu.archapp.moduleservice.WebActivityStarter
 import com.github.zchu.archapp.viewmodel.LauncherViewModel
 import com.saltoken.common.koin.LeanCloudConfig
 import com.saltoken.common.remote.createOkHttpClient
@@ -25,6 +27,8 @@ val appModule = module {
     single { AppSchedulers(AndroidSchedulers.mainThread(), Schedulers.io()) }
 
     factory<MainActivityStarter> { MainActivity.Companion }
+
+    factory<WebActivityStarter> { WebActivity.Companion }
 
     single<WelcomeService> {
         val leanCloudConfig = get<LeanCloudConfig>()

@@ -1,4 +1,4 @@
-package com.saltoken.common
+package com.saltoken.common.application
 
 import android.content.Context
 import android.content.res.Configuration
@@ -15,7 +15,7 @@ object FeatureApplicationInjector {
             arrayOfNulls[index] = newInstance
         }
         @Suppress("UNCHECKED_CAST")
-        this.featureApplications = arrayOfNulls as Array<IFeatureApplication>
+        featureApplications = arrayOfNulls as Array<IFeatureApplication>
     }
 
     fun attachBaseContext(base: Context) {

@@ -32,5 +32,11 @@
     <string name="empty_user_bio">还没有签名</string>
     <string name="format_skip">跳过 %d</string>
 
+    <string name="refresh">刷新</string>
+    <string name="copy_url">复制链接</string>
+    <string name="open_url">在浏览器中打开</string>
+    <string name="tip_open_fail">打开失败，没有找到可以打开该链接的其它应用</string>
+    <string name="tip_copy_done">复制成功</string>
+
 
 </resources>

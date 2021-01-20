@@ -1,3 +1,6 @@
+include ':gank:module'
+include ':gank:module_no_op'
+include ':gank:module_service'
 include ':user:module'
 include ':user:module_no_op'
 include ':login:module_no_op'
