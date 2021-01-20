@@ -5,6 +5,7 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
 import com.github.zchu.common.help.BaseFragmentAdapter
+import com.github.zchu.common.help.showToastShort
 import com.google.android.material.tabs.TabLayout
 import com.saltoken.common.base.BaseFragment
 
@@ -17,7 +18,7 @@ class GankGroupFragment : BaseFragment() {
         view
             .findViewById<View>(R.id.view_search)
             .setOnClickListener {
-                //TODO 去搜索
+                requireContext().showToastShort("该功能暂未实现")
             }
         val viewPager: ViewPager = view.findViewById(R.id.view_pager)
         val tab: TabLayout = view.findViewById(R.id.tab)
