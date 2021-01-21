@@ -1,7 +1,9 @@
 package com.github.zchu.archapp.gank.di
 
+import com.github.zchu.archapp.gank.GankGroupFragment
 import com.github.zchu.archapp.gank.data.GankDataSource
 import com.github.zchu.archapp.gank.data.GankService
+import com.github.zchu.archapp.gank.service.GankFragmentCreator
 import com.github.zchu.archapp.gank.viewmodel.GankCategoryViewModel
 import com.google.auto.service.AutoService
 import com.saltoken.common.remote.createOkHttpClient
@@ -34,6 +36,10 @@ class GankModuleInstaller : ModuleAutoInstallable() {
 
         viewModel { (name: String) ->
             GankCategoryViewModel(name, get(), get())
+        }
+
+        factory<GankFragmentCreator> {
+            GankGroupFragment.Companion
         }
 
     }

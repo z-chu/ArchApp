@@ -18,6 +18,7 @@ dependencies {
     implementation project(Modules.commonBase)
     implementation project(Modules.Resources.styles)
     implementation project(Modules.moduleService)
+    implementation project(Modules.Gank.moduleService)
 
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat

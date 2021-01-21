@@ -75,7 +75,8 @@ dependencies {
     productionImplementation project(Modules.User.module)
     implementation project(Modules.User.moduleService)
 
-    productionImplementation project(Modules.Gank.module)
+    implementation project(Modules.Gank.module)
+    implementation project(Modules.Gank.moduleService)
 
     implementation Depends.AndroidX.coreKtx
     implementation Depends.AndroidX.appcompat

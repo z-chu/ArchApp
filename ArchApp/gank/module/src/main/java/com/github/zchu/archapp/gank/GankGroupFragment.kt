@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
+import com.github.zchu.archapp.gank.service.GankFragmentCreator
 import com.github.zchu.common.help.BaseFragmentAdapter
 import com.github.zchu.common.help.showToastShort
 import com.google.android.material.tabs.TabLayout
@@ -37,7 +38,10 @@ class GankGroupFragment : BaseFragment() {
         tab.setupWithViewPager(viewPager)
     }
 
-    companion object {
+    companion object : GankFragmentCreator {
         private val categoryNameArray = arrayOf("Android", "App", "iOS", "前端", "瞎推荐", "拓展资源")
+        override fun createFragment(): Fragment {
+            return GankGroupFragment()
+        }
     }
 }
