@@ -1,12 +1,12 @@
 package com.saltoken.common
 
+import android.app.Application
 import android.content.Context
 import androidx.annotation.CallSuper
 import com.github.zchu.common.help.ToastDef
-import com.saltoken.common.application.BaseFeatureApplication
 import com.saltoken.commonbase.CommonBase
 
-open class AppBaseContext : BaseFeatureApplication() {
+open class AppBaseContext : Application() {
 
     @CallSuper
     override fun attachBaseContext(base: Context) {
