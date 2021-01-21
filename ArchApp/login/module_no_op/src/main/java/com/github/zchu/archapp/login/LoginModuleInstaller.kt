@@ -13,10 +13,8 @@ import org.koin.dsl.module
 class LoginModuleInstaller : ModuleAutoInstallable() {
 
     override val module: Module = module {
-        module {
-            single<SignInActivityStarter> {
-                SignInActivityStarterImpl()
-            }
+        single<SignInActivityStarter> {
+            SignInActivityStarterImpl()
         }
     }
 
