@@ -6,11 +6,17 @@ import timber.log.Timber
 import java.util.*
 import kotlin.collections.HashMap
 
-fun KoinApplication.installAutoRegister() {
+fun KoinApplication.installAutoRegister(isShowLog: Boolean = true) {
     val installableServiceLoader = ServiceLoader.load(KoinAutoInstallable::class.java)
     val modules = ArrayList<Module>(20)
     val properties = HashMap<String, String>()
+    var installables: ArrayList<KoinAutoInstallable>? = null
+    if (isShowLog) {
+        installables = ArrayList<KoinAutoInstallable>(20)
+    }
+
     installableServiceLoader.iterator().forEach {
+        installables?.add(it)
         modules.addAll(it.modules)
         for (property in it.properties) {
             val value = properties[property.key]
@@ -22,8 +28,9 @@ fun KoinApplication.installAutoRegister() {
             properties[property.key] = property.value
         }
     }
-    Timber.d("Auto install modules:$modules")
+    if (installables != null) {
+        Timber.d("Auto install :${installables.map { it.javaClass.name }}")
+    }
     modules(modules)
-    Timber.d("Auto install properties:$properties")
     properties(properties)
 }

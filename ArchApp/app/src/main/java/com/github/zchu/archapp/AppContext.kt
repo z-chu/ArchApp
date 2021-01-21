@@ -11,9 +11,9 @@ class AppContext : AppBaseContext() {
 
     override fun onCreate() {
         super.onCreate()
+        Timber.plant(DebugTree())
         AppKoinStarter.start(this)
         UserSessionManager.initialize(this)
-        Timber.plant(DebugTree())
     }
 
 

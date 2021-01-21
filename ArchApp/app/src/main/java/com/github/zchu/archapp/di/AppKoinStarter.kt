@@ -33,7 +33,7 @@ object AppKoinStarter {
             }
             properties(properties)
             modules(appModule)
-            installAutoRegister()
+            installAutoRegister(BuildConfig.DEBUG)
 
         }
     }
