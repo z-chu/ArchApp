@@ -67,12 +67,10 @@ dependencies {
     implementation project(Modules.Data.model)
 
 
-    developmentImplementation project(Modules.Login.moduleNoOp)
-    productionImplementation project(Modules.Login.module)
+    implementation project(Modules.Login.module)
     implementation project(Modules.Login.moduleService)
 
-    developmentImplementation project(Modules.User.moduleNoOp)
-    productionImplementation project(Modules.User.module)
+    implementation project(Modules.User.module)
     implementation project(Modules.User.moduleService)
 
     implementation project(Modules.Gank.module)
