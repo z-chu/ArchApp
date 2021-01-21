@@ -1,3 +1,4 @@
+include ':picture:module'
 include ':gank:module'
 include ':gank:launch'
 include ':gank:module_no_op'

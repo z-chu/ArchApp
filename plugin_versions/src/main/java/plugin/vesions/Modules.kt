@@ -28,6 +28,12 @@ object Modules {
         const val moduleService = ":gank:module_service"
     }
 
+    object Picture {
+        const val module = ":picture:module"
+        const val moduleNoOp = ":picture:module_no_op"
+        const val moduleService = ":picture:module_service"
+    }
+
 
     object Resources {
         const val languages = ":resources:languages"
