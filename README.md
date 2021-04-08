@@ -1,7 +1,8 @@
 # ArchApp
 
-# 组件化解决方案 （文档还在写,以下是草稿...,先看代码吧）
+组件化解决方案 
 
+<img src="https://raw.githubusercontent.com/z-chu/ArchApp/master/ArchApp/Screenshot/ArchApp.png?raw=true" width="700"> 
 
 
 ## 思想框架
@@ -70,8 +71,8 @@
 * Kotlin + buildSrc：自动补全和单击跳转，依赖更新时 将重新 构建整个项目
 * Composing builds：自动补全和单击跳转，依赖更新时 不会重新 构建整个项目
 
-
-
+## MVVM
+<img src="https://raw.githubusercontent.com/z-chu/ArchApp/master/ArchApp/Screenshot/MVVM.png?raw=true" width="600"> 
 
 
 ## 建议 
